@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+<head>
+	<title>Demo Tutor 2</title>
+</head>
+<body>
+<h1>这个页面将会解释如何通过Angular JS获取数据并更改页面内容</h1>
+<div id="container" ng-controller="AppCtrl">
+	<p>跟上一页一样,但是要先引入Angular JS的框架文件</p>
+	<p>{{content_1}}<p>
+	<p>{{content_2}}<p>
+
+	<p id="desc_1">点击按钮1会更改第二行，点击按钮2会更改第二行的数字<p>
+	<button ng-click="update()">按钮1</button>
+	<button ng-click="changeNumber()">按钮2</button>
+</div>
+<a href="blog.html">下一页</a>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript">
+var app = angular.module('demo',[])
+
+app.controller('AppCtrl',function($scope,$http){
+	$scope.content_1 = "对于Angular来说，不需要对每一个元素都设置id"
+	$scope.content_2 = 0
+
+	$scope.update = function(){
+		$http.get('data_3.php')
+		.success(function(response){
+			$scope.content_1 = response
+		})
+		$scope.apply()
+	}
+
+	$scope.changeNumber = function(){
+		$scope.content_2 = Math.floor(Math.random()*100)
+	}
+})
+</script>
+
+</body>
+</html>
