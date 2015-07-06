@@ -1,108 +1,104 @@
 /*-----------------------------------------------------------------------------------*/
-/*	GENERAL
+
+/*  GENERAL
 /*-----------------------------------------------------------------------------------*/
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
-	margin:0;
-	padding:0;
-	border:0;
-	outline:0;
-	font-size:100%;
-	vertical-align:baseline;
-	background:transparent
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent
 }
 body {
-	line-height:1;
-	margin-bottom: 5em;
+    line-height: 1;
+    margin-bottom: 5em;
 }
 ol, ul {
-	list-style:none
+    list-style: none
 }
 blockquote, q {
-	quotes:none
+    quotes: none
 }
 blockquote:before, blockquote:after, q:before, q:after {
-	content:'';
-	content:none
+    content: '';
+    content: none
 }
 :focus {
-	outline:0
+    outline: 0
 }
 ins {
-	text-decoration:none
+    text-decoration: none
 }
 del {
-	text-decoration:line-through
+    text-decoration: line-through
 }
 table {
-	border-collapse:collapse;
-	border-spacing:0
+    border-collapse: collapse;
+    border-spacing: 0
 }
 .clear {
-	clear:both;
-	display:block;
-	overflow:hidden;
-	visibility:hidden;
-	width:0;
-	height:0
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0
 }
 .clearfix:after {
-	clear:both;
-	content:' ';
-	display:block;
-	font-size:0;
-	line-height:0;
-	visibility:hidden;
-	width:0;
-	height:0
+    clear: both;
+    content: ' ';
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0
 }
 .clearfix {
-	display:inline-block
+    display: inline-block
 }
 * html .clearfix {
-	height:1%
+    height: 1%
 }
 .clearfix {
-	display:block
+    display: block
 }
 th, td {
-	margin:0;
-	padding:0
+    margin: 0;
+    padding: 0
 }
 table {
-	border-collapse:collapse;
-	border-spacing:0
+    border-collapse: collapse;
+    border-spacing: 0
 }
 .clear {
-	clear: both;
+    clear: both;
 }
 br {
-	line-height: 10px;
+    line-height: 10px;
 }
 input[type="submit"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner {
- border : 0px;
+    border: 0px;
 }
 input[type="submit"]:focus, input[type="button"]:focus {
-	outline : none;
+    outline: none;
 }
-
 ::selection {
-	background: #fefac7; /* Safari */
-	color: #555555;
+    background: #fefac7; /* Safari */
+    color: #555555;
 }
 ::-moz-selection {
-	background: #fefac7; /* Firefox */
-	color: #555555;
+    background: #fefac7; /* Firefox */
+    color: #555555;
 }
-.sticky,
-.gallery-caption,
-.wp-caption, 
-.bypostauthor,
-.wp-caption-text {}
-
+.sticky, .gallery-caption, .wp-caption, .bypostauthor, .wp-caption-text {
+}
 body {
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
@@ -120,14 +116,13 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: url(style/images/tile.png);
+    background: url(../imgs/tile.png);
 }
-input,
-textarea {
+input, textarea {
     background: rgba(0, 0, 0, 0.25);
     border: none;
     color: #b9b9b9;
-    font-family:  "Times New Roman", Georgia, Serif, sans-serif;
+    font-family: "Times New Roman", Georgia, Serif, sans-serif;
     font-weight: 400;
     font-size: 12px;
     line-height: 21px;
@@ -136,25 +131,27 @@ textarea {
     box-sizing: border-box; /* Opera/IE 8+ */
     width: 100%;
 }
-input:focus,
-textarea:focus {
+input:focus, textarea:focus {
     background: rgba(0, 0, 0, 0.40)
 }
-a {outline:none;color: #b9b9b9;}
-a:link {text-decoration:none;}
-a:active { text-decoration: none;}
-a:visited { text-decoration: none;}
+a {
+    outline: none;
+    color: #b9b9b9;
+}
+a:link {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
 a:hover {
     color: #86aca3
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family:  "Times New Roman", Georgia, Serif, sans-serif;
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Times New Roman", Georgia, Serif, sans-serif;
     color: #dedede;
     margin-bottom: 20px;
 }
@@ -192,8 +189,7 @@ h2.title {
     line-height: 21px;
     margin-bottom: 10px;
 }
-h1.title a,
-h2.title a {
+h1.title a, h2.title a {
     color: #dedede
 }
 .title a:hover {
@@ -225,16 +221,16 @@ hr {
     margin-bottom: 30px;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-/*	header
+
+/*  header
 /*-----------------------------------------------------------------------------------*/
 .header-wrapper {
     background: rgba(0, 0, 0, 0.33);
     margin-bottom: 40px;
-    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.55), inset 0 -1px 0 rgba(255,255,255,0.09);
-    -moz-box-shadow: 0 1px 0 rgba(0,0,0,0.55), inset 0 -1px 0 rgba(255,255,255,0.09);
-    box-shadow: 0 1px 0 rgba(0,0,0,0.55), inset 0 -1px 0 rgba(255,255,255,0.09);
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.55), inset 0 -1px 0 rgba(255, 255, 255, 0.09);
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.55), inset 0 -1px 0 rgba(255, 255, 255, 0.09);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.55), inset 0 -1px 0 rgba(255, 255, 255, 0.09);
     position: relative;
     z-index: 101;
 }
@@ -246,7 +242,6 @@ hr {
     float: left;
     padding-top: 22px;
 }
-
 #menu-wrapper .menu {
     list-style: none;
     float: right;
@@ -271,7 +266,7 @@ hr {
     display: block;
     text-decoration: none;
     line-height: 1;
-    font-family:  "Times New Roman", Georgia, Serif, sans-serif;
+    font-family: "Times New Roman", Georgia, Serif, sans-serif;
     font-size: 1.2em;
     letter-spacing: 0.4px;
     color: #dedede;
@@ -281,8 +276,7 @@ hr {
     padding: 0;
     font-weight: bold;
 }
-#menu-wrapper .menu ul li.active a,
-#menu-wrapper .menu ul li a:hover {
+#menu-wrapper .menu ul li.active a, #menu-wrapper .menu ul li a:hover {
     color: #86aca3
 }
 #menu-wrapper .menu ul li.active li a {
@@ -337,111 +331,109 @@ hr {
     margin: 0 auto;
 }
 
-         
 /*********************************************************************************/
+
 /* body                                                        */
+
 /*********************************************************************************/
 .wrapper {
     width: 100%;
     margin: 0 auto;
 }
 .accordion {
-	width:15%;
-	margin:0 auto;
+    width: 15%;
+    margin: 0 auto;
 }
-.accordion ul,
-.accordion li,
-.accordion a,
-.accordion span {
-	margin: 0;
-	padding: 0;
-	border: none;
-	outline: none;
+.accordion ul, .accordion li, .accordion a, .accordion span {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
 }
 .accordion li {
-	list-style: none;
+    list-style: none;
 }
 
 /* menu */
 .accordion li > a {
-	display: block;
-	position: relative;
-	min-width: 110px;
-	padding: 0 10px 0 40px;
-	height: 32px;
-	color: #fdfdfd;
-	font: bold;
-	font-size: 0.9em;
-	height: 2em;
-	line-height: 2em;
-	text-decoration: none;
-	text-shadow: 0px 1px 0px rgba(0,0,0, .35);
-	
-	background: #000000;
-	opacity:0.6;
-	background: -moz-linear-gradient(top,  #000000 0%, #151010 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#000000), color-stop(100%,#151010));
-	background: -webkit-linear-gradient(top,  #000000 0%,#151010 100%);
-	background: -o-linear-gradient(top,  #000000 0%,#151010 100%);
-	background: -ms-linear-gradient(top,  #000000 0%,#151010 100%);
-	background: linear-gradient(top,  #000000 0%,#151010 100%);
-
-	-webkit-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
-	-moz-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
-	box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
+    display: block;
+    position: relative;
+    min-width: 110px;
+    padding: 0 10px 0 40px;
+    height: 32px;
+    color: #fdfdfd;
+    font: bold;
+    font-size: 0.9em;
+    height: 2em;
+    line-height: 2em;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, .35);
+    background: #000000;
+    opacity: 0.6;
+    background: -moz-linear-gradient(top, #000000 0%, #151010 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #000000), color-stop(100%, #151010));
+    background: -webkit-linear-gradient(top, #000000 0%, #151010 100%);
+    background: -o-linear-gradient(top, #000000 0%, #151010 100%);
+    background: -ms-linear-gradient(top, #000000 0%, #151010 100%);
+    background: linear-gradient(top, #000000 0%, #151010 100%);
+    -webkit-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, .1), 0px 1px 0px 0px rgba(0, 0, 0, .1);
+    -moz-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, .1), 0px 1px 0px 0px rgba(0, 0, 0, .1);
+    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, .1), 0px 1px 0px 0px rgba(0, 0, 0, .1);
+}
+.accordion > li:hover > a, .accordion > li:target > a, .accordion > li > a.active {
+    color: #3e5706;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, .2);
+    background: #FF0033;
+    background: -moz-linear-gradient(top, #FF0033 0%, #FF222B 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FF0033), color-stop(100%, #FF222B));
+    background: -webkit-linear-gradient(top, #FF0033 0%, #FF222B 100%);
+    background: -o-linear-gradient(top, #FF0033 0%, #FF222B 100%);
+    background: -ms-linear-gradient(top, #FF0033 0%, #FF222B 100%);
+    background: linear-gradient(top, #FF0033  0%, #FF222B 100%);
+    */
 }
 
-.accordion > li:hover > a,
-.accordion > li:target > a,
-.accordion > li > a.active {
-	color: #3e5706;
-	text-shadow: 1px 1px 1px rgba(255,255,255, .2);
-	background: #FF0033;
-	background: -moz-linear-gradient(top,  #FF0033 0%, #FF222B 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FF0033), color-stop(100%,#FF222B));
-	background: -webkit-linear-gradient(top,  #FF0033 0%,#FF222B 100%);
-	background: -o-linear-gradient(top,  #FF0033 0%,#FF222B 100%);
-	background: -ms-linear-gradient(top,  #FF0033 0%,#FF222B 100%);
-	background: linear-gradient(top, #FF0033  0%,#FF222B 100%);	*/
-}
 /* Sub Menu */
 .sub-menu li a {
-	color: #797979;
-	text-shadow: 1px 1px 0px rgba(255,255,255, .2);
-
-	background: #e5e5e5;
-	border-bottom: 1px solid #c9c9c9;
-
-	-webkit-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
-	-moz-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
-	box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
+    color: #797979;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, .2);
+    background: #e5e5e5;
+    border-bottom: 1px solid #c9c9c9;
+    -webkit-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, .1), 0px 1px 0px 0px rgba(0, 0, 0, .1);
+    -moz-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, .1), 0px 1px 0px 0px rgba(0, 0, 0, .1);
+    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, .1), 0px 1px 0px 0px rgba(0, 0, 0, .1);
 }
-.sub-menu li:hover a { background: #efefef; }
-.sub-menu li:last-child a { border: none; }
+.sub-menu li:hover a {
+    background: #efefef;
+}
+.sub-menu li:last-child a {
+    border: none;
+}
 
 /* Functionality */
 .accordion li > .sub-menu {
-	display: none;
+    display: none;
 }
 .accordion li:target > .sub-menu {
-	display: block;
+    display: block;
 }
 
 /*-----------------------------------------------------------------------------------*/
-/*	FOOTER
+
+/*  FOOTER
 /*-----------------------------------------------------------------------------------*/
 .footer-wrapper {
-	position: absolute;
-  	bottom: 0;
-	width: 100%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     background: rgba(0, 0, 0, 0.44);
     margin: 0 auto;
     margin-top: 60px;
-    padding: 10px 0;	
-	height:2em;
-	line-height: 2em;
-	color: #b9b9b9;
-	font-size: 0.8em;
-	text-align: center;
-	text-decoration: none;
+    padding: 10px 0;
+    height: 2em;
+    line-height: 2em;
+    color: #b9b9b9;
+    font-size: 0.8em;
+    text-align: center;
+    text-decoration: none;
 }
