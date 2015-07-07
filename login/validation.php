@@ -1,7 +1,7 @@
 <?php
 	header("Content-Type: application/json; charset=UTF-8");
-	$username = $_GET['us'];
-	$password = $_GET['pa'];
+	$username = $_GET['u'];
+	$password = $_GET['p'];
 	if($username=="yaopeng" && $password=="happy233")
 		$valid = ["valid" =>true];
 	else

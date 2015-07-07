@@ -25,9 +25,8 @@
     <div class="header">
         <!-- Begin Logo -->
         <div class="logo">
-            <a href="index.html">
-                <img src="../imgs/logo.png" alt="" />
-            </a>
+            <a href="index.html"><img src="../imgs/logo.png" alt="" /></a>
+            <a href="https://twitter.com/vickyoopy" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @vickyoopy</a>
         </div>
         <!-- End Logo -->
         <!-- Begin Menu -->
@@ -54,20 +53,21 @@
 
 <!-- Begin Wrapper -->
 <div class="wrapper">
-        <form>
-        <div class="form-group">
-            <label>User Name</label>
-            <div><input class="form-control" type="text" value="" /></div>
-        </div>
-        <div class="form-group">
-            <label>Password</label>
-            <div><input class="form-control" type="password" /></div>
-        </div>
-        <div class="form-group">
-            <div><input type="submit" value="Log in"/></div>
-        </div>
-        </form>        
+    <form action="" method="post">
+        <div><input type="text" name="username" class="username" placeholder="Username" autocomplete="off"/></div>
+        <div><input type="password" name="password" class="password" placeholder="Password" oncontextmenu="return false" onpaste="return false" /></div>
+        <button id="submit" type="button">Sign in</button>
+    </form> 
 </div>  
+
+<div class="alert" style="text-align: center">
+            <h2>Alert</h2>
+            <div class="alert_con">
+                <p id="ts"></p>
+                <p style="line-height:70px"><a class="btn">OK</a></p>
+            </div>
+</div>
+
 <!-- End Wrapper -->
 
 <!-- Begin Footer -->
@@ -77,5 +77,42 @@
 <!-- End Footer --> 
 
 <script type="text/javascript" src="style/js/scripts.js"></script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+ <!-- Javascript -->
+        <script src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+        <script src="js/supersized.3.2.7.min.js"></script>
+        <script src="js/supersized-init.js"></script>
+        <script>
+        $(".btn").click(function(){
+            is_hide();
+        })
+        var u = $("input[name=username]");
+        var p = $("input[name=password]");
+        $("#submit").live('click',function(){
+            if(u.val() == '' || p.val() =='')
+            {
+                $("#ts").html("pls input username and password !");
+                is_show();
+                return false;
+            }
+            else{
+                var reg = /^[0-9A-Za-z]+$/;
+                if(!reg.exec(u.val()))
+                {
+                    $("#ts").html("用户名错误");
+                    is_show();
+                    return false;
+                }
+            }
+        });
+        window.onload = function()
+        {
+            $(".connect p").eq(0).animate({"left":"0%"}, 600);
+            $(".connect p").eq(1).animate({"left":"0%"}, 400);
+        }
+        function is_hide(){ $(".alert").animate({"top":"-40%"}, 300) }
+        function is_show(){ $(".alert").show().animate({"top":"45%"}, 300) }
+        </script>
+
 </body>
 </html>
