@@ -76,8 +76,9 @@
 </div>
 <!-- End Footer --> 
 
-<script type="text/javascript" src="style/js/scripts.js"></script>
+<script type="text/javascript" src="../js/scripts.js"></script>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+ 
  <!-- Javascript -->
         <script src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
         <script src="js/supersized.3.2.7.min.js"></script>
@@ -96,14 +97,17 @@
                 return false;
             }
             else{
-                var reg = /^[0-9A-Za-z]+$/;
-                if(!reg.exec(u.val()))
-                {
-                    $("#ts").html("用户名错误");
-                    is_show();
-                    return false;
-                }
-            }
+                $.get("validation.php?u="+u.val()+"&p="+p.val(),function(result){
+                    if(result.valid){
+                        location.href='http://smileindark.com';
+                    }
+                    else{
+                        $("#ts").html("invalid username/password");
+                        is_show();
+                        return false;    
+                    }   
+                })     
+            }   
         });
         window.onload = function()
         {

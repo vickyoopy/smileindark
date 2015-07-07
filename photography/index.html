@@ -1,48 +1,31 @@
 <!DOCTYPE HTML>
 <html lang="ch">
-
-	<head>
-    	<meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    	<title>smile in dark</title>
-        <link rel="shortcut icon" href="favicon.ico"> 
-		<link rel="stylesheet" href="css/index.css" type="text/css" media="screen">
-        <link rel="stylesheet" type="text/css" href="css/media-queries.css" />
-        <link rel="stylesheet" type="text/css" href="style/js/player/mediaelementplayer.css" />
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,700,700italic|Open+Sans+Condensed:300,700' rel="stylesheet" type='text/css'>
-        <script type="text/javascript" src="style/js/jquery-1.7.2.min.js"></script>
-        <script type="text/javascript" src="style/js/ddsmoothmenu.js"></script>
-        <script type="text/javascript" src="style/js/retina.js"></script>
-        <script type="text/javascript" src="style/js/jquery.masonry.min.js"></script>
-        <script type="text/javascript" src="style/js/jquery.fitvids.js"></script>
-        <script type="text/javascript" src="style/js/jquery.backstretch.min.js"></script>
-        <script type="text/javascript" src="style/js/mediaelement.min.js"></script>
-        <script type="text/javascript" src="style/js/mediaelementplayer.min.js"></script>
-        <script type="text/javascript" src="style/js/jquery.dcflickr.1.0.js"></script>
-        <script type="text/javascript" src="style/js/twitter.min.js"></script>
-        <script type="text/javascript">
-            $.backstretch("style/images/1.jpg");
-        </script>
-        <script type="text/javascript">
-        var pswd= localStorage.getItem("password");   
-        if (pswd != "happyday") {
-            pswd = prompt("Input password(if don't know, ask Yao)", "");
-            if (pswd == "happyday") {localStorage.setItem("password",pswd);}
-            else {window.location.href='http://eeeln.com/';}
-        }
-        </script>
-	 </head>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>blog</title>
+<link rel="shortcut icon" href="../favicon.ico"> 
+<link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/media-queries.css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,700,700italic|Open+Sans+Condensed:300,700' rel="stylesheet" type='text/css'>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/ddsmoothmenu.js"></script>
+<script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
+<script type="text/javascript">
+    $.backstretch("../imgs/1.jpg");
+</script>
+</head>
 
 
-	<body>
-    <div class="scanlines"></div>
-    <!-- Begin Header -->
-    <div class="header-wrapper opacity">
+<body>
+<div class="scanlines"></div>
+<!-- Begin Header -->
+<div class="header-wrapper opacity">
     <div class="header">
         <!-- Begin Logo -->
         <div class="logo">
             <a href="index.html">
-                <img src="style/images/logo.png" alt="" />
+                <img src="../imgs/logo.png" alt="" />
             </a>
         </div>
         <!-- End Logo -->
@@ -50,35 +33,32 @@
         <div id="menu-wrapper">
             <div id="menu" class="menu">
                 <ul id="tiny">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../blog/index.html">Blog</a>
+                    <li class="active"><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html">Blog</a></li>
+                    <li><a href="index.html">Photos</a></li>
+                    <li><a href="../game/index.html">Games</a>
                         <ul>
-                            <li><a href="../blog/comment.html">Message board</a></li>
-                            <li><a href="../blog/comment.html">Submit article</a></li>
-
+                            <li><a href="../game/pacman.html">Pacman</a></li>
                         </ul>
                     </li>
-                    <li class="active"><a href="index.html">Games</a>
-                        <ul>
-                            <li><a href="pacman.html">Pacman</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="../login/index.html">Log in</a>
                 </ul>
             </div>
         </div>
         <div class="clear"></div>
         <!-- End Menu -->
     </div>
-    </div>
-    <!-- End Header -->
+</div>
+<!-- End Header -->
 
 
-    <!-- Begin Wrapper -->
-    <div class="wrapper">
-    <h3 align="center">I am going to post more html5 games here.</hr>
-    But for now, there's only pacman.</h3> 
-    
-    </div>
+<!-- Begin Wrapper -->
+
+<!-- end Wrapper -->
+
+
+
+
 
 <!-- Begin Footer -->
 <div class="footer-wrapper">        
@@ -86,30 +66,6 @@
 </div>
 <!-- End Footer --> 
 
-
-    <script type="text/javascript"  src="js/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            // Store variables
-            var accordion_head = $('.accordion > li > a'),
-                accordion_body = $('.accordion li > .sub-menu');
-            // Open the first tab on load
-            accordion_head.first().addClass('active').next().slideDown('normal');
-            // Click function
-            accordion_head.on('click', function(event) {
-                // Disable header links
-                event.preventDefault();
-                // Show and hide the tabs on click
-                if ($(this).attr('class') != 'active'){
-                    accordion_body.slideUp('normal');
-                    $(this).next().stop(true,true).slideToggle('normal');
-                    accordion_head.removeClass('active');
-                    $(this).addClass('active');
-                }
-            });
-        });
-    </script>
-<script type="text/javascript" src="style/js/scripts.js"></script>
-
-    </body>
+<script type="text/javascript" src="js/scripts.js"></script>
+</body>
 </html>
