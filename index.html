@@ -22,14 +22,6 @@
         <script type="text/javascript">
             $.backstretch("imgs/1.jpg");
         </script>
-        <script type="text/javascript">
-        var pswd= localStorage.getItem("password");   
-        if (pswd != "happyday") {
-            pswd = prompt("Input password(if don't know, ask Yao)", "");
-            if (pswd == "happyday") {localStorage.setItem("password",pswd);}
-            else {window.location.href='http://eeeln.com/';}
-        }
-        </script>
 	 </head>
 
 
@@ -69,58 +61,10 @@
 
     <!-- Begin Wrapper -->
     <div class="wrapper">
-    <h3 align="center">Websites list here are only for personal use.</h3> </hr>
-    <ul class="accordion">
-    <li> <a href="#one">Daily</a>
-      <ul class="sub-menu">
-        <li><a href="https://www.coursera.org/specializations?utm_medium=topnav">coursera</a></li>
-        <li><a href="https://courses.edx.org/dashboard">edx</a></li>
-        <li><a href="http://www.imooc.com/space/index">imooc</a></li>
-        <li><a href="http://hk.jobsdb.com/hk">jobsDB</a></li>
-        <li><a href="http://cedars.hku.hk/showext.php?id=cp">cedars</a></li>
-         <li><a href="http://c.open.163.com/center/myCourse.htm#/myCourse">网易open course</a></li>
-        <li><a href="http://www.wibit.net/">wibit</a></li>
-        <li><a href="http://news.tvb.com/programmes/internationalnewsfile">tvb news</a></li>
-        <li><a href="http://www.uisdc.com/">uisdc</a></li>
-        <li><a href="https://www.fide.com/">fide</a></li>
-         <li><a href="http://www.shiku.org/">诗库</a></li>
-        <li><a href="http://www.poemhunter.com/poem-topics/">poemhunter</a></li>
-        <li><a href="http://eeeln.com/">易学</a></li>
-        <li><a href="https://trade.plus500.com/">plus500</a></li>
-        <li><a href="http://bbs.fengniao.com/">蜂鸟bbs</a></li> 
-      </ul>
-    </li>
-    <li> <a href="#">tools</a>
-      <ul class="sub-menu">
-        <li><a href="http://moodle.hku.hk/?">moodle</a></li>
-        <li><a href="https://msccs.cs.hku.hk/intranet2014/default.asp">intranet</a></li>
-        <li><a href="https://hkuportal.hku.hk/cas/servlet/edu.yale.its.tp.cas.servlet.Login?service=https://casa.hku.hk/libauth/servlet/authMain?uri|||http%3A%2F%2Fbooking.lib.hku.hk%2Fgetpatron.aspx">booking</a></li>
-        <li><a href="https://hkuportal.hku.hk/login.html">hkuportal</a></li>
-        <li><a href="http://www.gov.hk/tc/residents/immigration/idcard/hkic/bookregidcard.htm">gov</a></li>
-        <li><a href="http://www3.ha.org.hk/qmh/index.htm">QM hospital</a></li>
-        <li><a href="https://uhs3.hku.hk/main.aspx">health</a></li>
-        <li><a href="http://www.hkucssa.com/forum.php?mod=forumdisplay&fid=60">hkucssa</a></li>
-      </ul>
-    </li>
-    <li> <a href="#">learn</a>
-      <ul class="sub-menu">
-        <li><a href="http://ui-cloud.com/button-builder/">ui cloud</a></li>
-        <li><a href="http://tool.c7sky.com/webcolor/">webcolor</a></li>
-        <li><a href="https://simplytestable.com/">frontend web testing</a></li>
-        <li><a href="http://codepen.io/">codepen</a></li>
-        <li><a href="https://www.pinterest.com/">pinterest</a></li>
-      </ul>
-    </li>
-    <li> <a href="#">personal</a>
-      <ul class="sub-menu">
-        <li><a href="https://www.facebook.com/">facebook</a></li>
-        <li><a href="https://github.com/vickyoopy">github</a></li>
-        <li><a href="http://blog.sina.com.cn/yaoyaowill">blog</a></li>
-        <li><a href="http://www.weibo.com/234497223">weibo</a></li>
-        <li><a href="http://www.douban.com/people/vickypy/">douban</a></li>
-      </ul>
-    </li>
-    </ul>
+        <img src="imgs/leo.png" border="0" usemap="#leomap" alt="leo" />
+        <map name="leomap" id="leomap">
+        <area shape="circle" coords="384,224,15" href ="http://www.weibo.com/1248624581/" target ="_blank" alt="weibo" />
+        </map>  
     </div>
 
 <!-- Begin Footer -->
@@ -130,28 +74,9 @@
 <!-- End Footer --> 
 
 
-    <script type="text/javascript"  src="js/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            // Store variables
-            var accordion_head = $('.accordion > li > a'),
-                accordion_body = $('.accordion li > .sub-menu');
-            // Open the first tab on load
-            accordion_head.first().addClass('active').next().slideDown('normal');
-            // Click function
-            accordion_head.on('click', function(event) {
-                // Disable header links
-                event.preventDefault();
-                // Show and hide the tabs on click
-                if ($(this).attr('class') != 'active'){
-                    accordion_body.slideUp('normal');
-                    $(this).next().stop(true,true).slideToggle('normal');
-                    accordion_head.removeClass('active');
-                    $(this).addClass('active');
-                }
-            });
-        });
-    </script>
+
+
+<script type="text/javascript"  src="js/jquery.min.js"></script>  
 <script type="text/javascript" src="style/js/scripts.js"></script>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
