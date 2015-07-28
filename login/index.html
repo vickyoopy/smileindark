@@ -25,14 +25,14 @@
             <div id="menu" class="menu">
                 <ul id="tiny">
                     <li><a href="../index.html">Home</a></li>
-                    <li><a href="../blog/index.html">Blog</a></li>
-                    <li><a href="../photography/index.html">Photos</a></li>
-                    <li><a href="../game/index.html">Games</a>
+                    <li><a href="../blog">Blog</a></li>
+                    <li><a href="../photography">Photos</a></li>
+                    <li><a href="../game">Games</a>
                         <ul>
                             <li><a href="../game/pacman.html">Pacman</a></li>
                         </ul>
                     </li>
-                    <li class="active"><a href="index.html">Log in</a>
+                    <li class="active"><a href="#">Log in</a>
                 </ul>
             </div>
         </div>
@@ -91,7 +91,8 @@
             else{
                 $.get("validation.php?u="+u.val()+"&p="+p.val(),function(result){
                     if(result.valid){
-                        location.href='http://smileindark.com';
+                    	alert("Welcome back,"+u.val());
+                        location.href='../index.html';
                     }
                     else{
                         $("#ts").html("invalid username/password");

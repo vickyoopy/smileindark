@@ -67,7 +67,7 @@
 
 <!-- Begin Footer -->
 <div class="footer-wrapper">        
-    copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a>
+    copyright©<?php echo date("Y")?> | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a>
 </div>
 <!-- End Footer --> 
 
