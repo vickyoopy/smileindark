@@ -26,14 +26,9 @@
             <div id="menu" class="menu">
                 <ul id="tiny">
                     <li><a href="../index.html">Home</a></li>
-                    <li><a href="../index.html">Blog</a></li>
-                    <li class="active"><a href="index.html">Photos</a></li>
-                    <li><a href="../game/index.html">Games</a>
-                        <ul>
-                            <li><a href="../game/pacman.html">Pacman</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="../login/index.html">Log in</a>
+                    <li><a href="../blog/">Blog</a></li>
+                    <li class="active"><a href="index.php">Photos</a></li>
+                    <li><a href="../about/">About Me</a>
                 </ul>
             </div>
         </div>
@@ -49,8 +44,8 @@
 <div id="imageFlow">
 
         <div class="bank">
-            <a rel="imgs/1.jpg" title="光绘_py@12 May 2013" href="imgs/1.jpg" target="_blank">intro:haha</a>
-            <a rel="imgs/2.jpg" title="光绘_happy@12 May 2013" href="imgs/2.jpg" target="_blank">intro:哈哈</a>
+            <a rel="imgs/1.jpg" title="杨洋01" href="imgs/1.jpg" target="_blank">帅炸</a>
+            <a rel="imgs/2.jpg" title="光杨洋02" href="imgs/2.jpg" target="_blank">帅炸</a>
             
         </div>    
 
