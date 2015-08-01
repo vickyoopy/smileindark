@@ -120,7 +120,7 @@ if($isLogin)
 ?>
 <!-- Footer -->
 <div class="footer-wrapper">
-	copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a>
+	copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a> | <a href="index.php">Admin</a>
 </div>
 <script src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
 <script src="js/supersized.3.2.7.min.js"></script>

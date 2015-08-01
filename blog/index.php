@@ -1,19 +1,24 @@
 <?php
 
-class Page {
-    
+
     /* Check if user is logged in */
-    public function checkLogin() {
+    function checkLogin() {
         $isLogin = false;
         if(isset(isset($_COOKIE["uid"])) $uid = $_COOKIE["uid"];
         $isLogin = TRUE;
     }
 
-    /* display header */
-    public function displayHeader() {
-        echo '<!doctype html>';
-        ?>
-        <html lang="ch">
+    function displayposts() {
+        echo "haha";
+    } 
+
+?>
+
+
+
+
+    <!DOCTYPE html>
+    <html lang="ch">
         <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
@@ -38,15 +43,10 @@ class Page {
         <?php 
         if($isLogin)
             echo "welcome,Yao!"; 
-        else          
-            {$url="../login/index.html"; 
-            echo "<script language=\"javascript\">"; 
-            echo "location.href=\"$url\""; 
-            echo "</script>"; }
+        else
+            echo "welcome, guest."; 
         ?>
         </div>
-        
-
         <div id="menu-wrapper">
             <div id="menu" class="menu">
                 <ul id="tiny">
@@ -61,27 +61,19 @@ class Page {
         </div>
         </div>
         <!-- End Header -->
-        <?php
-    }
-  
-    /* display posts */
-    public function displayposts() {
-        echo "haha";
-    ?>  
-    <?php
-    }
-            
-    /* display footer */
-    public function displayFooter() {
-    ?>
-        <div class="footer-wrapper">        
-            copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a>
+
+        <!-- display blog-->
+
+
+
+
+
+        <!-- Footer -->
+        <div class="footer-wrapper">
+        copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a> | <a href="../admin/index.php">Admin</a>
         </div>
-    </body>
-    </html>  
-    <?php  
-    }
-};
+        </body>
+    </html> 
 
  
 session_start();
@@ -100,6 +92,5 @@ $page->displayposts();
 $page->displayFooter();
 mysql_close($db);
 
-?>
 
 
