@@ -93,11 +93,6 @@
 						arcu, id varius justo euismod in. Curabitur egestas consectetur magna vitae urna.</p>
 					</header>
 					
-					<!--
-						 Lightbox Gallery
-						 
-						 Powered by poptrox. Full docs here: https://github.com/n33/jquery.poptrox
-					-->
 						<div class="container small gallery">
 							<div class="row flush images">
 								<div class="6u"><a href="images/fulls/01.jpg" class="image full l"><img src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a></div>
@@ -124,14 +119,6 @@
 						<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.</p>
 					</header>
 					<div class="box container small">
-					
-						<!--
-							 Contact Form
-							 
-							 To get this working, place a script on your server to receive the form data, then
-							 point the "action" attribute to it (eg. action="http://mydomain.tld/mail.php").
-							 More on how it all works here: http://www.1stwebdesigner.com/tutorials/custom-php-contact-forms/
-						-->
 							<form method="post" action="#">
 								<div class="row half">
 									<div class="6u"><input type="text" name="name" placeholder="Name" /></div>
@@ -148,35 +135,18 @@
 									</div>
 								</div>
 							</form>
-
 					</div>
 				</div>
 			</section>
 			
 		<!-- Footer -->
 			<footer id="footer">
-			
-				<!--
-				     Social Icons
-				     
-				     Use anything from here: http://fortawesome.github.io/Font-Awesome/cheatsheet/)
-				-->
-					<ul class="actions">
-						<li><a href="#" class="fa solo fa-twitter"><span>Twitter</span></a></li>
-						<li><a href="#" class="fa solo fa-facebook"><span>Facebook</span></a></li>
-						<li><a href="#" class="fa solo fa-google-plus"><span>Google+</span></a></li>
-						<li><a href="#" class="fa solo fa-dribbble"><span>Dribbble</span></a></li>
-						<li><a href="#" class="fa solo fa-pinterest"><span>Pinterest</span></a></li>
-						<li><a href="#" class="fa solo fa-instagram"><span>Instagram</span></a></li>
-					</ul>
-
 				<!-- Menu -->
 					<ul class="menu">
-						<li>&copy; Untitled</li>
-						<li>Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a> | More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a></li>
-					</ul>
-			
+						<li>
+						copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a> | <a href="../admin/index.php">Admin</a>
+						</li>
+					</ul>	
 			</footer>
-
 	</body>
 </html>

@@ -63,7 +63,7 @@ function check($mode){
 <head>
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-	<title>Log in</title>
+	<title>Admin</title>
 	<link rel="shortcut icon" href="../favicon.ico"> 
 	<link rel="stylesheet" href="css/index.css" type="text/css" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/media-queries.css" />

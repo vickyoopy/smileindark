@@ -1,21 +1,30 @@
 <?php
 
+define( 'DB_NAME', 'smileindark' );
+define( 'DB_USER', 'admin' );
+define( 'DB_PASSWORD', 'vz28yt90' );
+define( 'DB_HOST', 'localhost' );
+define( 'DB_PORT', 3306 );
 
-    /* Check if user is logged in */
-    function checkLogin() {
-        $isLogin = false;
-        if(isset(isset($_COOKIE["uid"])) $uid = $_COOKIE["uid"];
-        $isLogin = TRUE;
-    }
 
-    function displayposts() {
-        echo "haha";
-    } 
+function displayposts() {
+    //取出所有posts display
+$con = mysql_connect("localhost","admin","vz28yt90");
+if (!$con)
+  {die('Could not connect: ' . mysql_error());}
+mysql_select_db("posts", $con);
+$sql = "SELECT * FROM 'posts' ";
+mysql_query($sql, $con);
+
+mysql_close($db);
+} 
+
+function displaysiglepost() {
+    //进入post.php显示singlepost
+} 
+
 
 ?>
-
-
-
 
     <!DOCTYPE html>
     <html lang="ch">
@@ -35,17 +44,11 @@
         </script>
         </head>
         <body>
-               
+       
         <!-- Begin Header -->
         <div class="header-wrapper opacity">
         <div class="header">
         <div class="logo"><a href="index.html"><img src="../imgs/logo.png" alt="" /></a>
-        <?php 
-        if($isLogin)
-            echo "welcome,Yao!"; 
-        else
-            echo "welcome, guest."; 
-        ?>
         </div>
         <div id="menu-wrapper">
             <div id="menu" class="menu">
@@ -62,8 +65,9 @@
         </div>
         <!-- End Header -->
 
+        <!-- display blog: -->
+        
         <!-- display blog-->
-
 
 
 
@@ -75,22 +79,6 @@
         </body>
     </html> 
 
- 
-session_start();
-$con = mysql_connect("localhost","admin","vz28yt90");
-if (!$con)
-  {die('Could not connect: ' . mysql_error());}
-mysql_select_db("posts", $con);
-$sql = "SELECT * FROM 'posts' ";
-mysql_query($sql, $con);
-
-
-$page = new Page();
-$page->checkLogin();
-$page->displayHeader();
-$page->displayposts();
-$page->displayFooter();
-mysql_close($db);
 
 
 
