@@ -8,7 +8,7 @@ define( 'DB_PORT', 3306 );
 
 $isLogin = false;
 
-if(empty($_COOKIE['username']) || empty($_COOKIE['password'])){  
+if(empty($_COOKIE['username']) || empty($_COOKIE['token'])){  
 	// 没登录
 }else{  
 	// 有cookie信息，进行验证
@@ -52,7 +52,7 @@ function check($mode){
 			}
 		}
 	} catch (PDOException $e){
-		// 发生了连接错误
+		echo $e->getMessage();
 	}
 	return false;
 }
@@ -69,7 +69,6 @@ function check($mode){
 	<link rel="stylesheet" type="text/css" href="css/media-queries.css" />
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,700,700italic|Open+Sans+Condensed:300,700' rel="stylesheet" type='text/css'>
 	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-	<script type="text/javascript" src="js/jquery.min.js"></script>  
 	<script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
 	<script type="text/javascript">
 		$.backstretch("../imgs/1.jpg");
@@ -122,7 +121,6 @@ if($isLogin)
 <div class="footer-wrapper">
 	copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a> | <a href="index.php">Admin</a>
 </div>
-<script src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
 <script src="js/supersized.3.2.7.min.js"></script>
 <script src="js/supersized-init.js"></script>
 
