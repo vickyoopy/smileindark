@@ -491,3 +491,8 @@ button:active {
 	text-align: center;
 	text-decoration: none;
 }
+
+.editor{
+	margin:auto;
+	width:800px;
+}
