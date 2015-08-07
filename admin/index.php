@@ -80,7 +80,7 @@ function check($mode){
 <!-- Header -->
 <div class="header-wrapper opacity">
 	<div class="header">
-		<div class="logo"><a href="index.html"><img src="../imgs/logo.png" alt="" /></a></div>
+		<div class="logo"><a href="http://smileindark.com/"><img src="../imgs/logo.png" alt="" /></a></div>
 		<div id="menu-wrapper">
 			<div id="menu" class="menu">
 				<ul id="tiny">
