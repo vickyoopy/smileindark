@@ -8,7 +8,7 @@ define( 'DB_PORT', 3306 );
 
 $isLogin = false;
 
-if(empty($_COOKIE['username']) || empty($_COOKIE['password'])){  
+if(empty($_COOKIE['username']) || empty($_COOKIE['token'])){  
 	// 没登录
 }else{  
 	// 有cookie信息，进行验证
@@ -52,7 +52,7 @@ function check($mode){
 			}
 		}
 	} catch (PDOException $e){
-		// 发生了连接错误
+		echo $e->getMessage();
 	}
 	return false;
 }
@@ -67,9 +67,9 @@ function check($mode){
 	<link rel="shortcut icon" href="../favicon.ico"> 
 	<link rel="stylesheet" href="css/index.css" type="text/css" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/media-queries.css" />
+	<link rel="stylesheet" type="text/css" href="css/simditor.css" />
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,700,700italic|Open+Sans+Condensed:300,700' rel="stylesheet" type='text/css'>
 	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-	<script type="text/javascript" src="js/jquery.min.js"></script>  
 	<script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
 	<script type="text/javascript">
 		$.backstretch("../imgs/1.jpg");
@@ -116,15 +116,37 @@ if(!$isLogin)
 <!-- Admin -->
 <?php
 if($isLogin)
-	echo '<p>Assume this is an editor.</p>';
+	echo 
+	'<div class="editor">'.
+	'<textarea id="editor" placeholder="Balabala" autofocus></textarea>'.
+	'<button onclick="save()">显示Html</button>'.
+	'<span>        </span>'.
+	'<button id="clear">设置内容</button>'.
+	'</div>';
 ?>
 <!-- Footer -->
 <div class="footer-wrapper">
 	copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a> | <a href="index.php">Admin</a>
 </div>
-<script src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
 <script src="js/supersized.3.2.7.min.js"></script>
 <script src="js/supersized-init.js"></script>
+<!-- Simditor Dependence -->
+<script type="text/javascript" src="js/module.min.js"></script>
+<script type="text/javascript" src="js/hotkeys.min.js"></script>
+<script type="text/javascript" src="js/uploader.min.js"></script>
+<script type="text/javascript" src="js/simditor.min.js"></script>
+<script type="text/javascript">
+var editor = new Simditor({
+  textarea: $('#editor'),
+  placeholder: '彭瑶真漂亮'
+});
 
+var save = function(){
+	alert(editor.getValue());
+};
+$('#clear').click(function(){
+	editor.setValue('胖叔叔真帅');
+});
+</script>
 </body>
 </html> 
