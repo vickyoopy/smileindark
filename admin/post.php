@@ -35,16 +35,10 @@ if($isLogin){
 		$dbh->exec("set names 'utf8'");
 		
 		$title=stripslashes(trim($_POST['title']));
-<<<<<<< HEAD
 		$catagory=stripslashes(trim($_POST['catagory']));
 		$content=stripslashes(trim($_POST['content']));
 		$sth = $dbh->prepare("INSERT INTO `posts` (`id`, `title`, `time`, `catagory`, `content`, `posturl`) VALUES (NULL, ?, CURRENT_DATE(), ?, ?, '');");
 		$result = $sth->execute(array($title,$catagory,$content));
-=======
-		$content=stripslashes(trim($_POST['content']));
-		$sth = $dbh->prepare("INSERT INTO `posts` (`id`, `title`, `time`, `catagory`, `content`, `posturl`) VALUES (NULL, ?, CURRENT_DATE(), '', ?, '');");
-		$result = $sth->execute(array($title,$content));
->>>>>>> origin/master
 		if($result) echo "保存成功";
 		else echo "保存失败";
 	} catch (PDOException $e){

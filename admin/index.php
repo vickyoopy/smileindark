@@ -119,7 +119,6 @@ if($isLogin)
 	echo 
 	'<div class="editor">'.
 	'<input id="title" type="text" name="post_name">'.
-<<<<<<< HEAD
 	'<form>
 		<select id="catagory" name="post_catagory">
 		<option value="volvo">碎碎念</option>
@@ -131,12 +130,6 @@ if($isLogin)
 	'<button onclick="save()">发布</button>'.
 	'<span>        </span>'.
 	'<button id="clear">清空</button>'.
-=======
-	'<textarea id="editor" placeholder="" autofocus></textarea>'.
-	'<button onclick="save()">保存</button>'.
-	'<span>        </span>'.
-	'<button id="clear">清空重写</button>'.
->>>>>>> origin/master
 	'</div>';
 ?>
 <!-- Footer -->
@@ -153,20 +146,13 @@ if($isLogin)
 <script type="text/javascript">
 var editor = new Simditor({
   textarea: $('#editor'),
-<<<<<<< HEAD
   placeholder: '正文'
-=======
-  placeholder: '彭瑶真漂亮'
->>>>>>> origin/master
 });
 
 var save = function(){
 	var data = {
 		title:$('#title').val(),
-<<<<<<< HEAD
 		catagory:$('#catagory').val(),
-=======
->>>>>>> origin/master
 		content:editor.getValue()
 	}
 	var submitting = $.post("post.php",data);
