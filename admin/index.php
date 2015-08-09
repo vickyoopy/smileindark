@@ -118,10 +118,11 @@ if(!$isLogin)
 if($isLogin)
 	echo 
 	'<div class="editor">'.
-	'<textarea id="editor" placeholder="Balabala" autofocus></textarea>'.
-	'<button onclick="save()">显示Html</button>'.
+	'<input id="title" type="text" name="post_name">'.
+	'<textarea id="editor" placeholder="" autofocus></textarea>'.
+	'<button onclick="save()">保存</button>'.
 	'<span>        </span>'.
-	'<button id="clear">设置内容</button>'.
+	'<button id="clear">清空重写</button>'.
 	'</div>';
 ?>
 <!-- Footer -->
@@ -142,10 +143,17 @@ var editor = new Simditor({
 });
 
 var save = function(){
-	alert(editor.getValue());
+	var data = {
+		title:$('#title').val(),
+		content:editor.getValue()
+	}
+	var submitting = $.post("post.php",data);
+	submitting.done(function(response){
+		alert(response);
+	})
 };
 $('#clear').click(function(){
-	editor.setValue('胖叔叔真帅');
+	editor.setValue('');
 });
 </script>
 </body>
