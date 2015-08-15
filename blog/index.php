@@ -6,31 +6,12 @@ define( 'DB_PASSWORD', 'vz28yt90' );
 define( 'DB_HOST', 'localhost' );
 define( 'DB_PORT', 3306 );
 
-
-function displayposts() {
-    //取出所有posts display
-$con = mysql_connect("localhost","admin","vz28yt90");
-if (!$con)
-  {die('Could not connect: ' . mysql_error());}
-mysql_select_db("posts", $con);
-$sql = "SELECT * FROM 'posts' ";
-mysql_query($sql, $con);
-
-mysql_close($db);
-} 
-
-function displaysiglepost() {
-    //进入post.php显示singlepost
-} 
-
-
 ?>
-
     <!DOCTYPE html>
     <html lang="ch">
         <head>
         <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Blog</title>
         <link rel="shortcut icon" href="../favicon.ico"> 
         <link rel="stylesheet" href="css/index.css" type="text/css" media="screen">
@@ -39,12 +20,13 @@ function displaysiglepost() {
         <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
         <script type="text/javascript" src="js/jquery.min.js"></script>  
         <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
-        <script type="text/javascript">
-             $.backstretch("../imgs/1.jpg");
-        </script>
+        <script src="js/jquery-2.1.3.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/pace.min.js"></script>
+        <script src="js/modernizr.custom.js"></script>
         </head>
-        <body>
-       
+        
+        <body style="background-color: black">
         <!-- Begin Header -->
         <div class="header-wrapper opacity">
         <div class="header">
@@ -56,7 +38,7 @@ function displaysiglepost() {
                     <li><a href="../index.html">Home</a></li>
                     <li class="active"><a href="index.php">Blog</a></li>
                     <li><a href="../photography/">Photos</a></li>   
-                    <li><a href="../about/">About Me</a>
+                    <li><a href="../about/">About</a>
                 </ul>
             </div>
         </div>
@@ -65,12 +47,37 @@ function displaysiglepost() {
         </div>
         <!-- End Header -->
 
-        <!-- display blog: -->
-        
-        <!-- display blog-->
-
-
-
+    
+    <!-- display blog -->
+    <?php
+    echo
+     '<div class="wrapper" style="text-align: center">'.
+        '<div class="content-body">'; 
+        try{
+        $dbh = new PDO('mysql:host='.DB_HOST.';port='.DB_PORT.';dbname='.DB_NAME, DB_USER, DB_PASSWORD);
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $dbh->exec("set names 'utf8'");
+        $sth = $dbh->prepare('SELECT * FROM posts Order by time desc');
+        $sth->execute();
+        $result = $sth->fetchAll();
+        foreach($result as $row){
+            echo
+                '<article class="post">'.
+                '<div class="entry-header">'.
+                    '<h1 class="post-title"><a href="single.php">'.$row['title'].'</a></h1>'.
+                    '<div class="entry-meta">'.$row['catagory'].'|'.$row['time'].'|Vicky </div>'.
+                '</div>'.
+                '<div class="entry-content clearfix" style="text-align: left">'.
+                    '<p>'.$row['content'].'</p>'.
+                    '<div class="read-more"><a href="single.php">Continue reading <span class="meta-nav">→</span></a></div>'.
+                '</div>'.
+                '</article>';}
+        } 
+        catch (PDOException $e){
+        echo "连接服务器失败".$e->getMessage();
+        }
+        echo '</div></div>';
+        ?>
 
         <!-- Footer -->
         <div class="footer-wrapper">

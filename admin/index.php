@@ -87,7 +87,7 @@ function check($mode){
 					<li><a href="../index.html">Home</a></li>
 					<li><a href="../blog/">Blog</a></li>
 					<li><a href="../photography/">Photos</a></li>
-					<li><a href="../about/">About Me</a></li>
+					<li><a href="../about/">About</a></li>
 				</ul>
 			</div>
 		</div>
@@ -119,25 +119,24 @@ if($isLogin)
 	echo 
 	'<div class="editor">'.
 	'<input id="title" type="text" name="post_name">'.
-	'<form>
+	'<form style="float:left">
 		<select id="catagory" name="post_catagory">
-		<option value="volvo">碎碎念</option>
-		<option value="saab">技术贴</option>
-		<option value="fiat">旅行志</option>
+		<option value="碎碎念">碎碎念</option>
+		<option value="技术贴">技术贴</option>
+		<option value="旅行志">旅行志</option>
 		</select>
 	</form>'.
 	'<textarea id="editor" placeholder="" autofocus></textarea>'.
 	'<button onclick="save()">发布</button>'.
-	'<span>        </span>'.
-	'<button id="clear">清空</button>'.
 	'</div>';
 ?>
 <!-- Footer -->
 <div class="footer-wrapper">
 	copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a> | <a href="index.php">Admin</a>
 </div>
-<script src="js/supersized.3.2.7.min.js"></script>
-<script src="js/supersized-init.js"></script>
+
+<script type="text/javascript" src="js/supersized.3.2.7.min.js"></script>
+<script type="text/javascript" src="js/supersized-init.js"></script>
 <!-- Simditor Dependence -->
 <script type="text/javascript" src="js/module.min.js"></script>
 <script type="text/javascript" src="js/hotkeys.min.js"></script>
@@ -146,7 +145,7 @@ if($isLogin)
 <script type="text/javascript">
 var editor = new Simditor({
   textarea: $('#editor'),
-  placeholder: '正文'
+  placeholder: '写点啥呢...'
 });
 
 var save = function(){
@@ -160,9 +159,7 @@ var save = function(){
 		alert(response);
 	})
 };
-$('#clear').click(function(){
-	editor.setValue('');
-});
+
 </script>
 </body>
 </html> 
