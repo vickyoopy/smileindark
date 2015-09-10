@@ -70,10 +70,6 @@ function check($mode){
 	<link rel="stylesheet" type="text/css" href="css/simditor.css" />
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,700,700italic|Open+Sans+Condensed:300,700' rel="stylesheet" type='text/css'>
 	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-	<script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
-	<script type="text/javascript">
-		$.backstretch("../imgs/1.jpg");
-	</script>
 </head>
 
 <body>
@@ -113,23 +109,30 @@ if(!$isLogin)
 	'	</div>'.
 	'</div>';
 ?>
+
+
 <!-- Admin -->
 <?php
 if($isLogin)
 	echo 
 	'<div class="editor">'.
 	'<input id="title" type="text" name="post_name">'.
-	'<form style="float:left">
+	'<br />'.
+	'<form>
 		<select id="catagory" name="post_catagory">
 		<option value="碎碎念">碎碎念</option>
 		<option value="技术贴">技术贴</option>
 		<option value="旅行志">旅行志</option>
 		</select>
 	</form>'.
+	'<br />'.
+	'<input id="posturl" type="text" name="posturl">'.
 	'<textarea id="editor" placeholder="" autofocus></textarea>'.
 	'<button onclick="save()">发布</button>'.
 	'</div>';
 ?>
+
+
 <!-- Footer -->
 <div class="footer-wrapper">
 	copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a> | <a href="index.php">Admin</a>

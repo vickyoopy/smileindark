@@ -19,7 +19,6 @@ define( 'DB_PORT', 3306 );
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,700,700italic|Open+Sans+Condensed:300,700' rel="stylesheet" type='text/css'>
         <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
         <script type="text/javascript" src="js/jquery.min.js"></script>  
-        <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
         <script src="js/jquery-2.1.3.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/pace.min.js"></script>
@@ -49,10 +48,9 @@ define( 'DB_PORT', 3306 );
 
     
     <!-- display blog -->
+    <div class="wrapper">
+    <div class="content-body">
     <?php
-    echo
-     '<div class="wrapper" style="text-align: center">'.
-        '<div class="content-body">'; 
         try{
         $dbh = new PDO('mysql:host='.DB_HOST.';port='.DB_PORT.';dbname='.DB_NAME, DB_USER, DB_PASSWORD);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -63,21 +61,25 @@ define( 'DB_PORT', 3306 );
         foreach($result as $row){
             echo
                 '<article class="post">'.
-                '<div class="entry-header">'.
-                    '<h1 class="post-title"><a href="single.php">'.$row['title'].'</a></h1>'.
+                '<div>'.
+                    '<h1 class="post-title"><a href="single.php?id='.$row['id'].'">'.$row['title'].'</a></h1>'.
                     '<div class="entry-meta">'.$row['catagory'].'|'.$row['time'].'|Vicky </div>'.
-                '</div>'.
+                '</div>'. 
                 '<div class="entry-content clearfix" style="text-align: left">'.
-                    '<p>'.$row['content'].'</p>'.
-                    '<div class="read-more"><a href="single.php">Continue reading <span class="meta-nav">→</span></a></div>'.
+                '<p>'.mb_strimwidth($row['content'], 0 , 250 , "...").'</p>'.
+                '<div class="read-more"><a href="single.php?id='.$row['id'].'">Continue reading <span>→</span></a></div>'.
                 '</div>'.
-                '</article>';}
+                '</article>'
+            ;}
         } 
+    
         catch (PDOException $e){
         echo "连接服务器失败".$e->getMessage();
-        }
-        echo '</div></div>';
-        ?>
+        } 
+    ?>
+
+    </div>
+    </div>
 
         <!-- Footer -->
         <div class="footer-wrapper">

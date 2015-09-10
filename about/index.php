@@ -10,16 +10,12 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,700,700italic|Open+Sans+Condensed:300,700' rel="stylesheet" type='text/css'>
         <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
         <script type="text/javascript" src="js/jquery.min.js"></script>  
-        <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
         <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
         <script type="text/javascript" src="js/photobooth_min.js"></script>
         <script type="text/javascript" src="js/jquery.qtip.min.js"></script>
         <script type="text/javascript" src="js/gbin1.js"></script>
-        <script type="text/javascript">
-             $.backstretch("../imgs/1.jpg");
-        </script>
         </head>
-	<body>
+	<body style="background-color:black" >
 
 		<!-- Header -->
 		<div class="header-wrapper">
@@ -42,22 +38,22 @@
             
 		<div class="wrapper" style="text-align:center; width:80%">
 				<h1>Wanna know more?</h1>
-					<h1><p> This website was expected to be a public welfare website protecting teeth when founded.<br/>
+					<h2><p> This website was expected to be a public welfare website protecting teeth when founded.<br/>
 							However, blabla...<br/>
 							Finally, I decide to share sth interesting in my life via this website.<br/>
 							Anyway, hope everyone smile in the dark world.<br/>
 							and...more contents are ready to publish.<br/>
-						    If you have any suggestions, pls write <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢">email</a> to me.</p></h1>
+						    If you have any suggestions, pls write <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢">email</a> to me.</p></h2>
 			<section id="main">
             <h1> Do u know..I'm looking at you?</h1>
-            <article>
-            <h1>click the controll menu below, you can controll crop, hue, brightness, take picture </h1>
-            <div id="webcam"></div>
-            <div id="plist"> picture list </div>
-            <div id="pictures"><div class="nopic">no pictures</div></div>
-            </article>
-        </section>		
-        </div>		
+            <h2>click the controll menu below, you can controll crop, hue, brightness, take picture </h2>
+                <div id="webcam"></div>
+                <div id="plist"> picture list </div>
+                <div id="pictures"><div class="nopic">no pictures</div></div>
+            </section>		
+        </div>	
+
+
 <!-- Footer -->
 <div class="footer-wrapper">
 	copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a> | <a href="../admin/index.php">Admin</a>

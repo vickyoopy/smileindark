@@ -37,8 +37,10 @@ if($isLogin){
 		$title=stripslashes(trim($_POST['title']));
 		$catagory=stripslashes(trim($_POST['catagory']));
 		$content=stripslashes(trim($_POST['content']));
-		$sth = $dbh->prepare("INSERT INTO `posts` (`id`, `title`, `time`, `catagory`, `content`, `posturl`) VALUES (NULL, ?, CURRENT_DATE(), ?, ?, '');");
-		$result = $sth->execute(array($title,$catagory,$content));
+		$posturl=stripslashes(trim($_POST['posturl']));
+		
+		$sth = $dbh->prepare("INSERT INTO `posts` (`id`, `title`, `time`, `catagory`, `content`, `posturl`) VALUES (NULL, ?, CURRENT_DATE(), ?, ?, ?);");
+		$result = $sth->execute(array($title,$catagory,$content,$posturl));
 		if($result) echo "保存成功";
 		else echo "保存失败";
 	} catch (PDOException $e){

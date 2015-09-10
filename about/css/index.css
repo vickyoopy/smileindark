@@ -146,30 +146,36 @@ h1, h2, h3, h4, h5, h6 {
     color: #dedede;
     margin-bottom: 20px;
 }
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Times New Roman", Georgia, Serif, sans-serif;
+    color: #dedede;
+    margin-bottom: 20px;
+}
 h1 {
     font-size: 1.2em;
     line-height: 1.3em;
 }
 h2 {
     font-size: 1.0em;
-    line-height: 1.3em;
+    line-height: 1.2em;
     font-weight: 500;
 }
 h3 {
-    font-size: 20px;
-    line-height: 22px;
+    font-size: 1.0em;
+    line-height: 1.3em;
+    font-weight: 500;
 }
 h4 {
-    font-size: 18px;
-    line-height: 20px;
+    font-size: 1.0em;
+    line-height: 1.3em;
+    font-weight: 500;
 }
 h5 {
-    font-size: 16px;
-    line-height: 20px;
-    margin-bottom: 10px;
+    font-size: 1.0em;
+    line-height: 1.3em;
+    font-weight: 500;
 }
 h6 {
-    font-family: "Times New Roman", Georgia, Serif, sans-serif;
     font-size: 0.9em;
     line-height: 1.2em;
     font-weight: 450;
@@ -203,13 +209,6 @@ ol {
 ol li {
     padding: 0;
     margin: 0;
-}
-hr {
-    border: none;
-    background: transparent url(style/images/line.png) repeat-x;
-    height: 3px;
-    margin-top: 10px;
-    margin-bottom: 30px;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -331,6 +330,46 @@ hr {
     width: 100%;
     margin: 0 auto;
 }
+#pictures, #webcam {
+    margin: 10px 0 0;
+}
+#main {
+    width: 80%;
+    margin: 15px auto;
+    padding: 15px;
+    color: #fff;
+    border: 2px solid #FFF;
+    box-shadow: 0px 0px 10px #CCC;
+    border-radius: 5px;
+}
+#main #webcam {
+    height: 640px;
+    width: 100%;
+}
+#main #plist {
+    margin: 10px 0;
+    border-radius: 5px;
+    background: #CCC;
+    padding: 10px;
+}
+#main img {
+    margin-bottom: 10px;
+    background: #F8F8F8;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #888;
+}
+.clear {
+    clear: both;
+}
+#main ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#main .photobooth {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
 /*-----------------------------------------------------------------------------------*/
 
@@ -350,53 +389,4 @@ hr {
     font-size: 0.8em;
     text-align: center;
     text-decoration: none;
-}
-#pictures, #webcam {
-    margin: 10px 0 0;
-}
-#main {
-    width: 800px;
-    margin: 10px auto;
-    background: #FFF;
-    color: #333;
-    border: 2px solid #FFF;
-    box-shadow: 0px 0px 10px #CCC;
-    padding: 20px;
-    border-radius: 5px;
-}
-#main article {
-    margin-bottom: 50px;
-    background: #F8F8F8;
-    border-radius: 5px;
-    padding: 20px;
-    border: 1px solid #bbb;
-}
-#main #webcam {
-    height: 400px;
-    width: 100%;
-}
-#main #plist {
-    margin: 20px 0;
-    font-weight: bold;
-    border-radius: 5px;
-    background: #CCC;
-    padding: 10px;
-}
-#main img {
-    margin-bottom: 50px;
-    background: #F8F8F8;
-    border-radius: 10px;
-    box-shadow: 0px 0px 5px #888;
-}
-.clear {
-    clear: both;
-}
-#main ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-#main .photobooth {
-    border: 1px solid #ccc;
-    border-radius: 5px;
 }
