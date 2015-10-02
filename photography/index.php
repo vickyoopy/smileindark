@@ -1,16 +1,23 @@
-<!DOCTYPE HTML>
-<html lang="ch">
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-        <title>Photos</title>
-        <link rel="shortcut icon" href="../favicon.ico"> 
-        <link rel="stylesheet" href="css/index.css" type="text/css" media="screen">
-        <link rel="stylesheet" type="text/css" href="css/media-queries.css" />
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,700,700italic|Open+Sans+Condensed:300,700' rel="stylesheet" type='text/css'>
-        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-        <script type="text/javascript" src="js/jquery.min.js"></script>  
-        <script type="text/javascript"> 
+<?php
+define( 'DB_NAME', 'smileindark' );
+define( 'DB_USER', 'admin' );
+define( 'DB_PASSWORD', 'vz28yt90' );
+define( 'DB_HOST', 'localhost' );
+define( 'DB_PORT', 3306 );
+?>
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Photos</title>
+    <link rel="shortcut icon" href="../favicon.ico"> 
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <script type="text/javascript"> 
 var v3D = function () { 
     /* ---- private vars ---- */ 
     var scr, 
@@ -309,33 +316,33 @@ var v3D = function () {
 v3D.init(); 
  
 </script>
+</head>
+  
 
-     </head>
 
-    <body style="background-color:black">
-    <!-- Begin Header -->
-    <div class="header-wrapper opacity">
-    <div class="header">
-        <div class="logo"><a href="index.html"><img src="../imgs/logo.png" alt="" /></a></div>
-        <div id="menu-wrapper">
-            <div id="menu" class="menu">
-                <ul id="tiny">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../blog/">Blog</a></li>
-                    <li class="active"><a href="index.php">Photos</a></li>
-                    <li><a href="../about/">About</a>
-                </ul>
-            </div>
+<body style="background-color: black">
+<!-- Begin Header -->
+<div class="header">
+    <div class="logoimg"><img src="../imgs/logo.png"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+        <ul class="nav navbar-nav">
+                <li><a href="../index.php">Home</a></li>
+                <li ><a href="../blog/">Blog</a></li>  
+                <li><a href="index.php">Photos</a></li>   
+                <li><a href="../about/">About</a>         
+        </ul>  
         </div>
-        <div class="clear"></div>
-        <!-- End Menu -->
     </div>
 </div>
-<!-- End Header -->
+</div>
 
 
 <!-- Begin Wrapper -->
-<div class="wrapper">
+<main class="main" role="main">
+    <div class="container">
+    
     <div id="screen" style="zoom:1">
     <span><img src="images/1.jpg" title="士美非路" alt="-2,-1,-.8,1.5,2"></span>
     <span><img src="images/2.jpg" title="大学道" alt="-1,-.8,0,1.2,1.6"></span>
@@ -343,17 +350,25 @@ v3D.init();
     <span><img src="images/5.jpg" title="沿海渔家" alt="-1.7,0,.4,1.4,1"></span>
     <span><img src="images/6.jpg" title="海岸" alt="-1.5,-.9,.8,3,1.8"></span>
     <span><img src="images/8.jpg" title="瓢虫蛋糕" alt=".5,-1,-.4,1.5,2"></span>
-</div>
-</div>
+    </div>
+    </div>
+</main>
 <!-- end Wrapper -->
 
-<!-- Begin Footer -->
-<div class="footer-wrapper">
-        copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a> | <a href="../admin/index.php">Admin</a>
+<!-- Footer
+    <div class="footer-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+            copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a> | <a href="../admin/index.php">Admin</a>
+            </div>
         </div>
-<!-- End Footer --> 
-
-
-
+    </div>
+    </div> -->
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>    
 </body>
-</html>
+</html> 
