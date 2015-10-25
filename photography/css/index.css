@@ -1,4 +1,24 @@
 /*  general */
+@import url(http://fonts.useso.com/css?family=Raleway:200,500,700,800);
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?rretjt');
+    src: url('../fonts/icomoon.eot?#iefixrretjt') format('embedded-opentype'), url('../fonts/icomoon.woff?rretjt') format('woff'), url('../fonts/icomoon.ttf?rretjt') format('truetype'), url('../fonts/icomoon.svg?rretjt#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 h1, h2, h3, h4, h5, h6 {
     font-family: "Times New Roman", Georgia, Serif, sans-serif;
     color: #dedede;
@@ -69,120 +89,6 @@ a:hover {
 /* main content*/
 .main {
     margin-top: 90px
-}
-#imageFlow {
-    position: absolute;
-    width: 100%;
-    height: 80%;
-    left: 0%;
-    top: 10%;
-    background: #000;
-}
-#imageFlow .diapo {
-    position: absolute;
-    left: -1000px;
-    cursor: pointer;
-    -ms-interpolation-mode: nearest-neighbor;
-}
-#imageFlow .link {
-}
-#imageFlow .bank {
-    visibility: hidden;
-}
-#imageFlow .top {
-    position: absolute;
-    width: 100%;
-    height: 40%;
-    background: #181818;
-}
-#imageFlow .text {
-    position: absolute;
-    left: 0px;
-    width: 100%;
-    bottom: 16%;
-    text-align: center;
-    color: #FFF;
-    font-family: verdana, arial, Helvetica, sans-serif;
-    z-index: 1000;
-}
-#imageFlow .title {
-    font-size: 0.9em;
-    font-weight: bold;
-}
-#imageFlow .legend {
-    font-size: 0.8em;
-}
-#imageFlow .scrollbar {
-    position: absolute;
-    left: 10%;
-    bottom: 10%;
-    width: 80%;
-    height: 16px;
-    z-index: 1000;
-}
-#imageFlow .track {
-    position: absolute;
-    left: 1%;
-    width: 98%;
-    height: 16px;
-    filter: alpha(opacity=30);
-    opacity: 0.3;
-}
-#imageFlow .arrow-left {
-    position: absolute;
-}
-#imageFlow .arrow-right {
-    position: absolute;
-    right: 0px;
-}
-#imageFlow .bar {
-    position: absolute;
-    height: 16px;
-    left: 25px;
-}
-#screen {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #000;
-}
-#screen img {
-    position: absolute;
-    width: 0px;
-    height: 0px;
-    border: none;
-    -ms-interpolation-mode: nearest-neighbor;
-    image-rendering: optimizeSpeed;
-}
-#screen .wall {
-    position: absolute;
-    background: transparent;
-    border-style: solid;
-    border-width: 0px;
-    width: 0px;
-    height: 0px;
-    font-size: 0px;
-    z-index: 1;
-}
-#screen .trans {
-    position: absolute;
-    left: -10000px;
-    background: #FFF;
-    filter: alpha(opacity=20);
-    opacity: 0.2;
-    font-size: 1px;
-    border: #000 solid 1px;
-}
-#screen .txt {
-    position: absolute;
-}
-#screen .plo {
-    position: absolute;
-    color: #ccc;
-    font-family: arial;
-    white-space: nowrap;
-    font-size: 10px;
-    letter-spacing: 2px;
 }
 
 /* FOOTER */

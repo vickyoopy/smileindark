@@ -131,7 +131,17 @@ if($isLogin)
 	</form>'.
 	'<br />'.
 	'<textarea id="editor" placeholder="" autofocus></textarea>'.
+	'<br />'.
 	'<button onclick="save()">发布</button>'.
+	'<br />'.
+
+
+	// upload img
+	'<form action="upload.php" method="post" enctype="multipart/form-data">'.
+	'<label for="file">Filename:</label>'.
+	'<input type="file" name="file" id="file" value="choose photos" />'.
+	'<input type="submit" name="submit" value="Submit" />'.
+	'</form>'.
 	'</div>';
 ?>
 
@@ -175,6 +185,7 @@ var save = function(){
 	})
 };
 </script>
+
 
 </body>
 </html> 
