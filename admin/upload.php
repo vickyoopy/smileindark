@@ -35,7 +35,7 @@ if($isLogin){
 	$dbh->exec("set names 'utf8'");
 	
 	//上传文件到服务器
-	if $_FILES["file"]["size"] < 10240)
+	if ($_FILES["file"]["size"] < 1048576)
 	{
 		  if ($_FILES["file"]["error"] > 0)
 		  {
@@ -47,15 +47,15 @@ if($isLogin){
 		    echo "Type: " . $_FILES["file"]["type"] . "<br />";
 		    echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
 		    echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br />";
-			    if (file_exists("photography/imgs/" . $_FILES["file"]["name"]))
+			    if (file_exists("../photography/imgs/" . $_FILES["file"]["name"]))
 			      {
 			      echo $_FILES["file"]["name"] . " already exists. ";
 			      }
 			    else
 			      {
 			      move_uploaded_file($_FILES["file"]["tmp_name"],
-			      "photography/imgs/" . $_FILES["file"]["name"]);
-			      echo "Stored in: " . "photography/imgs/" . $_FILES["file"]["name"];
+			      "../photography/imgs/" . $_FILES["file"]["name"]);
+			      echo "Stored in: " . "../photography/imgs/" . $_FILES["file"]["name"];
 			      }
 	    	}
 	}
@@ -65,7 +65,7 @@ if($isLogin){
 	//保存文件信息到数据库
 		$title=stripslashes(trim($_FILES["file"]["name"]));
 		$description=stripslashes(trim($_FILES["file"]["name"]));
-		$filepath=stripslashes(trim($_FILES["file"]["name"]));
+		$filepath=stripslashes(trim("../photography/imgs/"));
 		$sth = $dbh->prepare("INSERT INTO `photos` (`id`, `title`, `description`, `filepath`) VALUES (NULL, ?, ?, ?);");
 		$result = $sth->execute(array($title,$description,$filepath));
 		if($result) echo "保存成功";
