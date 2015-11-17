@@ -171,7 +171,6 @@ define( 'DB_PORT', 3306 );
 
 
 <!-- Begin photos -->
-
             <li class="col-xs-6 col-sm-4 col-md-3" data-src="img/1.jpg" 
             data-sub-html="<h4></h4><p></p>">
             <a href="">
@@ -193,7 +192,7 @@ define( 'DB_PORT', 3306 );
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-            copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a> | <a href="../admin/index.php">Admin</a> 
+            copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a> | <a href="photoadmin.php">AdminPhotos</a> 
             </div>
         </div>
     </div>
