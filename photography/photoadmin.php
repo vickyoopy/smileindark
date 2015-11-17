@@ -59,7 +59,6 @@ function check($mode){
 ?>
 
 
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -73,7 +72,7 @@ function check($mode){
     <link rel="stylesheet" type="text/css" href="css/simditor.css" />
     <link rel="stylesheet" href="css/index.css" type="text/css">
 </head>
-  
+
 <body style="background-color: black">
 <!-- Begin Header -->
 <div class="header">
@@ -92,7 +91,34 @@ function check($mode){
 </div>
 </div>
 
-<!-- Login -->
+<div class="container">
+
+<?php
+if($isLogin)
+	echo 
+//upload 
+	'<div class="col-sm-3">'.
+		'<form id="uploadForm" enctype="multipart/form-data">'.
+			'<div class="form-group">'.
+				'<label for="exampleInputDesc">图片描述</label>'.
+				'<input type="text" class="form-control" id="exampleInputDesc" name="desc" placeholder="...">'.
+			'</div>'.
+			'<div class="form-group">'.
+				'<label for="exampleInputFile">上传文件</label>'.
+				'<input type="file" id="exampleInputFile" name="upload_file">'.
+				'<p class="help-block">允许大小：20M，允许类型：jpg, png, gif</p>'.
+			'</div>'.
+		'</form>'.
+		'<button id="uploadBtn" class="btn btn-primary">点此上传</button>'.
+	'</div>'.
+//image list 
+	'<div class="col-sm-9">'.
+		'<label>图片列表</label>'.
+		'<div id="imgList" class="row">'.
+			
+		'</div>'.
+	'</div>';
+?>
 <?php
 if(!$isLogin)
 	echo 
@@ -111,38 +137,27 @@ if(!$isLogin)
 	'	</div>'.
 	'</div>';
 ?>
-	
-<!-- Admin -->
-<?php
-if($isLogin)
-	echo 
-	
-	'<div class="upload">'.
-	// upload img
-	'<form action="upload.php" method="post" enctype="multipart/form-data">'.
-		'<label for="file">Filename:</label>'.
-		'<input type="file" name="file" id="file" value="choose photos" />'.
-		'<input type="submit" name="submit" value="Submit" />'.
-	'</form>'.
-	'</div>';
-?>
 
 
- <!-- Footer -->
-    <div class="footer-wrapper">
+
+</div>
+<!-- Footer -->
+<div class="footer-wrapper">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-            copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a> | <a href="photoadmin.php">AdminPhotos</a> 
+            copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a> | <a href="photoadmin.php">Upload</a> 
             </div>
         </div>
     </div>
-    </div>
+</div>
 
  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
  <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
  <script src="js/bootstrap.min.js"></script>
  <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script> 
-
+<script src="js/jquery.min.js"></script>
+<script src="http://malsup.github.com/jquery.form.js"></script>
+<script src="js/upload.js"></script>
 </body>
-</html> 
+</html>

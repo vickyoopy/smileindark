@@ -192,7 +192,7 @@ define( 'DB_PORT', 3306 );
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-            copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a> | <a href="photoadmin.php">AdminPhotos</a> 
+            copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a> | <a href="photoadmin.php">Upload</a> 
             </div>
         </div>
     </div>
