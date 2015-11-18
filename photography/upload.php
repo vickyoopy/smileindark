@@ -60,7 +60,7 @@ try {
 		
 		$title = $title.".".$ext;
 	
-		$sth = $dbh->prepare("INSERT INTO `photos` (`id`, `title`, `time`, `desc`) VALUES (NULL, ?, CURRENT_TIMESTAMP, ?);");
+		$sth = $dbh->prepare("INSERT INTO `photos` (`id`, `title`, `time`, `description`) VALUES (NULL, ?, CURRENT_TIMESTAMP, ?);");
 		$sth->execute(array($title, $desc));
 	}catch(PDOException $e){
 		$result['msg'] = $e->getMessage();

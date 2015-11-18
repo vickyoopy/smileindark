@@ -24,8 +24,8 @@ try{
 	$res = $sth->fetchAll();
 
 	foreach ($res as $row) {
-		$photoList[]=$row['filename'];
-		$descList[]=$row['desc'];
+		$photoList[]=$row['title'];
+		$descList[]=$row['description'];
 	}
 	$result["success"] = true;
 }catch(PDOException $e){

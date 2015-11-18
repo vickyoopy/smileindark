@@ -5,7 +5,7 @@ $("#uploadBtn").click(function(){
 		url:"upload.php",
 		success: function(response){
 			if(response.success){
-				//alert("上传成功");
+				alert("上传成功");
 				getPhotoList();
 			}else{
 				alert("上传失败，"+response.msg);

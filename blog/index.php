@@ -43,53 +43,35 @@ define( 'DB_PORT', 3306 );
     <div class="container">
 <?php
         try{
-        $dbh = new PDO('mysql:host='.DB_HOST.';port='.DB_PORT.';dbname='.DB_NAME, DB_USER, DB_PASSWORD);
-        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $dbh->exec("set names 'utf8'");
-        $sth = $dbh->prepare('SELECT * FROM posts Order by time desc');
-        $sth->execute();
-        $result = $sth->fetchAll();
-        $count=0;
-        foreach($result as $row){
-            $count++;
-            if ($count%2 == 1){
+            $dbh = new PDO('mysql:host='.DB_HOST.';port='.DB_PORT.';dbname='.DB_NAME, DB_USER, DB_PASSWORD);
+            $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $dbh->exec("set names 'utf8'");
+            $sth = $dbh->prepare('SELECT * FROM posts Order by time desc');
+            $sth->execute();
+            $result = $sth->fetchAll();
+        
+            foreach($result as $row){
                 echo
-                '<div class="row">'.
-                '<div class="col-xs-12 col-sm-6">'.
-                '<article class="post">'.
-                '<div>'.
-                    '<h1 class="post-title"><a href="single.php?id='.$row['id'].'">'.$row['title'].'</a></h1>'.
-                    '<div class="entry-meta">'.$row['catagory'].'|'.$row['time'].'|Vicky </div>'.
-                '</div>'. 
-                '<div class="entry-content clearfix" style="text-align: left">'.
-                '<p>'.substr(strip_tags($row['content']), 0 , 501)."...".'</p>'.
-                '<div class="read-more"><a href="single.php?id='.$row['id'].'">Continue reading <span>→</span></a></div>'.
-                '</div>'.
-                '</article>'.
-                '</div>'
-                ;}
-            else{
-                echo
-                '<div class="col-xs-12 col-sm-6">'.
-                '<article class="post">'.
-                '<div>'.
-                    '<h1 class="post-title"><a href="single.php?id='.$row['id'].'">'.$row['title'].'</a></h1>'.
-                    '<div class="entry-meta">'.$row['catagory'].'|'.$row['time'].'|Vicky </div>'.
-                '</div>'. 
-                '<div class="entry-content clearfix" style="text-align: left">'.
-                '<p>'.substr(strip_tags($row['content']), 0 , 501)."...".'</p>'.
-                '<div class="read-more"><a href="single.php?id='.$row['id'].'">Continue reading <span>→</span></a></div>'.
-                '</div>'.
-                '</article>'.
-                '</div>'.
-                '</div>'
-                ;}
+                    '<div class="row">'.
+                    '<div class="col-xs-12">'.
+                    '<article class="post">'.
+                    '<div>'.
+                        '<h1 class="post-title"><a href="single.php?id='.$row['id'].'">'.$row['title'].'</a></h1>'.
+                        '<div class="entry-meta">'.$row['catagory'].'|'.$row['time'].'|Vicky </div>'.
+                    '</div>'. 
+                    '<div class="entry-content clearfix" style="text-align: left">'.
+                    '<p>'.substr(strip_tags($row['content']), 0 , 501)."...".'</p>'.
+                    '<div class="read-more"><a href="single.php?id='.$row['id'].'">Continue reading <span>→</span></a></div>'.
+                    '</div>'.
+                    '</article>'.
+                    '</div>';
             }
         } 
         catch (PDOException $e){
-        echo "连接服务器失败".$e->getMessage();
+            echo "连接服务器失败".$e->getMessage();
         } 
 ?>
+    </div>
 </div>
 </main>
 

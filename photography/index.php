@@ -150,9 +150,9 @@ define( 'DB_PORT', 3306 );
         <div class="col-xs-12">
         <ul class="nav navbar-nav">
                 <li><a href="../index.php">Home</a></li>
-                <li ><a href="../blog/">Blog</a></li>  
+                <li ><a href="../blog/index.php">Blog</a></li>  
                 <li><a href="index.php">Photos</a></li>   
-                <li><a href="../about/">About</a>         
+                <li><a href="../about/index.php">About</a>         
         </ul>  
         </div>
     </div>
@@ -171,10 +171,34 @@ define( 'DB_PORT', 3306 );
 
 
 <!-- Begin photos -->
-            <li class="col-xs-6 col-sm-4 col-md-3" data-src="img/1.jpg" 
-            data-sub-html="<h4></h4><p></p>">
-            <a href="">
-            <img class="img-responsive" src="img/thumb-1.jpg"><div class="demo-gallery-poster"><img src="img/zoom.png"></div></a></li>
+<?php
+
+$result = array(
+  "success"=>false,
+  "msg"=>""
+);
+
+$photoList = array();
+$descList = array();
+
+try{
+  $dbh = new PDO('mysql:host='.DB_HOST.';port='.DB_PORT.';dbname='.DB_NAME, DB_USER, DB_PASSWORD);
+  $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $dbh->exec("set names 'utf8'");
+  $sth = $dbh->prepare("SELECT * FROM `photos` ORDER BY `time` DESC LIMIT 10;");
+  $sth->execute();
+  $res = $sth->fetchAll();
+  foreach($res as $row){
+            echo
+            '<li class="col-xs-6 col-sm-4 col-md-3" data-src="upload/'+ urldecode(json_encode($row['title'])) +'" '.
+            'data-sub-html="<h4>'.$row['title'].'</h4><p>'.$row['description'].'</p>">'.
+            '<a href=""><img class="img-responsive" src="thumbnail/' + urldecode(json_encode($row['title'])) +'"><div class="demo-gallery-poster"><img src="img/zoom.png"></div></a></li>'.
+        }
+  catch (PDOException $e){
+        echo "连接服务器失败".$e->getMessage();
+        } 
+  }
+?>
 <!-- End photos -->    
 
 

@@ -155,9 +155,9 @@ if(!$isLogin)
  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
  <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
  <script src="js/bootstrap.min.js"></script>
- <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script> 
+ <script src="js/jquery-1.7.2.min.js"></script> 
 <script src="js/jquery.min.js"></script>
 <script src="http://malsup.github.com/jquery.form.js"></script>
-<script src="js/upload.js"></script>
+<script src="upload.js"></script>
 </body>
 </html>

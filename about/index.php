@@ -21,8 +21,8 @@
         <div class="col-xs-12">
         <ul class="nav navbar-nav">
                 <li><a href="../index.php">Home</a></li>
-                <li><a href="../blog/">Blog</a></li>   
-                <li><a href="../photography/">Photos</a></li>   
+                <li><a href="../blog/index.php">Blog</a></li>   
+                <li><a href="../photography/index.php">Photos</a></li>   
                 <li><a href="index.php">About</a>         
         </ul>  
         </div>
