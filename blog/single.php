@@ -65,7 +65,7 @@ define( 'DB_PORT', 3306 );
                 $result = $sth->fetch();
             }
             echo
-                '<article class="post">'.
+                '<article class="post" style="color:white">'.
                 '<div>'.
                     '<h1 class="post-title">'.$result['title'].'</h1>'.
                     '<div class="entry-meta">'.$result['catagory'].'|'.$result['time'].'|Vicky </div>'.
@@ -85,16 +85,49 @@ define( 'DB_PORT', 3306 );
 
 <!-- Comment Wrapper -->
 <div class="container">
-<div class="row"> <div class="col-xs-12"> <h1 class="page-title">Comment here.</h1></div></div>
+
+<div class="row"> <div class="col-xs-12"> 
+<h1 class="page-title">Comment here.</h1>
+</div>
+</div>
+
+<?php
+        try{
+            $dbh = new PDO('mysql:host='.DB_HOST.';port='.DB_PORT.';dbname='.DB_NAME, DB_USER, DB_PASSWORD);
+            $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $dbh->exec("set names 'utf8'");
+            $sth = $dbh->prepare('SELECT * FROM comments Order by time desc');
+            $sth->execute();
+            $result = $sth->fetchAll();
+        
+            foreach($result as $row){
+                echo
+                    '<div class="col-xs-12">'.
+                    '<article class="post">'.
+                        '<h1 class="post-title" style="text-align: left">'.$row['name'].'</h1>'.
+                        '<div class="entry-meta" style="text-align: left">'.$row['time'].'</div>'. 
+                        '<div class="entry-content clearfix" style="text-align: left">'.
+                        '<p>'.substr(strip_tags($row['message']), 0 , 1000)."...".'</p>'.
+                        '</div>'.
+                    '</article>'.
+                    '</div>';
+            }
+        } 
+        catch (PDOException $e){
+            echo "连接服务器失败".$e->getMessage();
+        } 
+?>
+
 <form action="#" method="post" class="contact-form">
     <div class="row"> <div class="col-xs-12">
-                <input type="text" name="name" placeholder="Name" required>
+                <input type="text" id="name" name="name" placeholder="Name" required>
                 <input type="email" name="email" placeholder="Email" required>
                 <input type="text" name="subject" placeholder="Subject" required>
-                <textarea name="message" rows="7" placeholder="Your Message" required></textarea>
-                <button class="btn-send">Drop Me a Line</button>     
+                <textarea id="message" name="message" rows="7" placeholder="Notice: 内置浏览器可能无法评论, 请选择在浏览器打开." required></textarea>
+                <button class="btn-send" onclick="save()">Drop Me a Line</button>     
     </div>  </div>
-</form>        
+</form> 
+
 </div>
 </main>
 
@@ -110,10 +143,25 @@ define( 'DB_PORT', 3306 );
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="js/jquery.min.js"></script>  
+    <script src="js/bootstrap.min.js"></script> 
     <script src="js/pace.min.js"></script>
-    <script src="js/modernizr.custom.js"></script>       
+    <script src="js/modernizr.custom.js"></script>     
+    <script type="text/javascript">
+    // var content = new Simditor({
+    //     textarea: $('#message'),
+    //     placeholder: 'Your Message, pls less than 1000 words'
+    // });
+    var save = function(){
+        var data = {
+            name:$('#name').val(),
+            message:$('#message').val(),
+        }
+        var submitting = $.post("sendcomment.php",data);
+        submitting.done(function(response){
+            alert(response);
+        })
+    };
+    </script>
+
 </body>
 </html> 

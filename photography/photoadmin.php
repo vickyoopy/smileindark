@@ -123,19 +123,11 @@ if($isLogin)
 if(!$isLogin)
 	echo 
 
-	'	<form action="index.php" method="post">'.
+	'	<form action="photoadmin.php" method="post">'.
 	'		<div><input type="text" name="username" class="username" placeholder="Username" autocomplete="off"/></div>'.
 	'		<div><input type="password" name="password" class="password" placeholder="Password" oncontextmenu="return false" onpaste="return false" /></div>'.
 	'		<button id="submit" type="submit">Sign in</button>'.
-	'	</form> '.
-	
-	'<div class="alert" style="text-align: center">'.
-	'	<h2>Alert</h2>'.
-	'	<div class="alert_con">'.
-	'		<p id="ts"></p>'.
-	'		<p style="line-height:70px"><a class="btn">OK</a></p>'.
-	'	</div>'.
-	'</div>';
+	'	</form> ';
 ?>
 
 

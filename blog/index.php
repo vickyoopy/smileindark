@@ -52,7 +52,6 @@ define( 'DB_PORT', 3306 );
         
             foreach($result as $row){
                 echo
-                    '<div class="row">'.
                     '<div class="col-xs-12">'.
                     '<article class="post">'.
                     '<div>'.
@@ -72,7 +71,6 @@ define( 'DB_PORT', 3306 );
         } 
 ?>
     </div>
-</div>
 </main>
 
 

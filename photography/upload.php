@@ -13,7 +13,7 @@ $result = array(
 	"filepath"=>""
 );
 
-$fileName = getSeqID();
+$title = getSeqID();
 $desc = $_POST['desc'];
 try {
 	if (!isset($_FILES['upload_file']['error']) || is_array($_FILES['upload_file']['error'])) {
@@ -88,7 +88,7 @@ function getSeqID(){
 	return $strsec;
 }
 
-function img2thumb($src_img, $dst_img, $width = 150, $height = 150, $cut = 0, $proportion = 0){
+function img2thumb($src_img, $dst_img, $width = 320, $height = 240, $cut = 0, $proportion = 0){
     if(!is_file($src_img))
     {
         return false;
