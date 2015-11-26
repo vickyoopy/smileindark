@@ -88,7 +88,7 @@ function getSeqID(){
 	return $strsec;
 }
 
-function img2thumb($src_img, $dst_img, $width = 320, $height = 240, $cut = 0, $proportion = 0){
+function img2thumb($src_img, $dst_img, $width = 150, $height = 150, $cut = 0, $proportion = 0){
     if(!is_file($src_img))
     {
         return false;

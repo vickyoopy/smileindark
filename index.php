@@ -53,5 +53,15 @@
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>  
     <script type="text/javascript" src="js/hhh.js"></script> 
+    <script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?78fb9f503366094de2b3f2afce1e0970";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+
 </body>
 </html> 
