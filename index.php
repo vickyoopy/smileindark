@@ -34,6 +34,10 @@
  <main class="main" role="main">
     <div class="container">
     <div class="row"><div class="col-xs-12"><p style="text-align: center;font-size: 2.0em">l'enfer, c'est les autres.</p></div></div>
+
+
+
+    
     </div>
 </main>
 
@@ -51,8 +55,6 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>  
-    <script type="text/javascript" src="js/hhh.js"></script> 
     <script>
 		var _hmt = _hmt || [];
 		(function() {

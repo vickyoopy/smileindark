@@ -145,7 +145,6 @@ if($isLogin)
  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
  <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
  <script src="js/bootstrap.min.js"></script>
- <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script> 
 <!-- Simditor Dependence -->
 <script src="js/supersized.3.2.7.min.js"></script>
 <script src="js/supersized-init.js"></script>

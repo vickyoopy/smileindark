@@ -56,6 +56,7 @@ define( 'DB_PORT', 3306 );
                 $sth->bindParam(1, $id, PDO::PARAM_STR);
                 $sth->execute();
                 $result = $sth->fetch();
+                $blogid = $id;
             }
             else if (isset($_GET['posturl'])) {
                 $posturl=$_GET['posturl'];
@@ -63,6 +64,7 @@ define( 'DB_PORT', 3306 );
                 $sth->bindParam(1, $posturl, PDO::PARAM_STR);
                 $sth->execute();
                 $result = $sth->fetch();
+                $blogid = $result['id'];
             }
             echo
                 '<article class="post" style="color:white">'.
@@ -86,37 +88,17 @@ define( 'DB_PORT', 3306 );
 <!-- Comment Wrapper -->
 <div class="container">
 
-<div class="row"> <div class="col-xs-12"> 
+<div class="row"> 
+<div class="col-xs-12"> 
 <h1 class="page-title">Comment here.</h1>
 </div>
 </div>
 
-<?php
-        try{
-            $dbh = new PDO('mysql:host='.DB_HOST.';port='.DB_PORT.';dbname='.DB_NAME, DB_USER, DB_PASSWORD);
-            $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $dbh->exec("set names 'utf8'");
-            $sth = $dbh->prepare('SELECT * FROM comments Order by time desc');
-            $sth->execute();
-            $result = $sth->fetchAll();
-        
-            foreach($result as $row){
-                echo
-                    '<div class="col-xs-12">'.
-                    '<article class="post">'.
-                        '<h1 class="post-title" style="text-align: left">'.$row['name'].'</h1>'.
-                        '<div class="entry-meta" style="text-align: left">'.$row['time'].'</div>'. 
-                        '<div class="entry-content clearfix" style="text-align: left">'.
-                        '<p>'.substr(strip_tags($row['message']), 0 , 1000)."...".'</p>'.
-                        '</div>'.
-                    '</article>'.
-                    '</div>';
-            }
-        } 
-        catch (PDOException $e){
-            echo "连接服务器失败".$e->getMessage();
-        } 
-?>
+
+
+<div id="commentList">  
+</div>
+
 
 <form action="#" method="post" class="contact-form">
     <div class="row"> <div class="col-xs-12">
@@ -145,7 +127,51 @@ define( 'DB_PORT', 3306 );
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script> 
     <script src="js/pace.min.js"></script>
-    <script src="js/modernizr.custom.js"></script>     
+    <script src="js/modernizr.custom.js"></script>  
+    <script type="text/javascript">
+    $(document).ready(function() {
+    $("#commentList").html("");
+    var tmp= <?php echo $blogid; ?>;
+    var blogid = parseInt(tmp)
+    $.post("getcomment.php",{blogid}).done(function(response){
+        if(response.success){
+            for (var i = 0; i < response.nameList.length; i++) {
+                if (!response.replyList[i]){
+                        var html = '<div class="col-xs-12">'+
+                           '<article class="post">'+
+                           '<h1 class="post-title" style="text-align: left">'+ response.nameList[i]+'</h1>'+
+                           '<div class="entry-meta" style="text-align: left">'+ response.timeList[i] +'</div>'+
+                            '<div class="entry-content clearfix" style="text-align: left">'+
+                            '<p>'+ response.msgList[i]+'</p>'+'</div>'+ 
+                            '</article>'+
+                            '</div>';
+                }
+                else{
+                            var html = '<div class="col-xs-12">'+
+                           '<article class="post">'+
+                           '<h1 class="post-title" style="text-align: left">'+ response.nameList[i]+'</h1>'+
+                           '<div class="entry-meta" style="text-align: left">'+ response.timeList[i] +'</div>'+
+                            '<div class="entry-content clearfix" style="text-align: left">'+
+                            '<p>'+ response.msgList[i]+'</p>'+'</div>'+ 
+                            '<p><h5>REPLY to '+ response.nameList[i] +':</h5></p>'+
+
+                                '<div class="row"> <div class="col-xs-12"><article class="post">'+ '<div class="entry-content clearfix" style="text-align: left">'+
+                                '<p>'+response.replyList[i]+'</p>'+'</div></article></div></div>'+ 
+
+                            '</article>'+
+                            '</div>';
+                }
+                
+                $("#commentList").append(html);
+            };
+        }
+        else{
+            alert("获取评论失败, " + response.msg)
+        }
+    })
+    });
+    </script>  
+
     <script type="text/javascript">
     // var content = new Simditor({
     //     textarea: $('#message'),
@@ -154,6 +180,7 @@ define( 'DB_PORT', 3306 );
     var save = function(){
         var data = {
             name:$('#name').val(),
+            email:$('#email').val(),
             message:$('#message').val(),
         }
         var submitting = $.post("sendcomment.php",data);

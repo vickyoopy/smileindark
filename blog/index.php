@@ -41,35 +41,12 @@ define( 'DB_PORT', 3306 );
 <!-- display blog -->
 <main class="main" role="main">
     <div class="container">
-<?php
-        try{
-            $dbh = new PDO('mysql:host='.DB_HOST.';port='.DB_PORT.';dbname='.DB_NAME, DB_USER, DB_PASSWORD);
-            $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $dbh->exec("set names 'utf8'");
-            $sth = $dbh->prepare('SELECT * FROM posts Order by time desc');
-            $sth->execute();
-            $result = $sth->fetchAll();
-        
-            foreach($result as $row){
-                echo
-                    '<div class="col-xs-12">'.
-                    '<article class="post">'.
-                    '<div>'.
-                        '<h1 class="post-title"><a href="single.php?id='.$row['id'].'">'.$row['title'].'</a></h1>'.
-                        '<div class="entry-meta">'.$row['catagory'].'|'.$row['time'].'|Vicky </div>'.
-                    '</div>'. 
-                    '<div class="entry-content clearfix" style="text-align: left">'.
-                    '<p>'.substr(strip_tags($row['content']), 0 , 501)."...".'</p>'.
-                    '<div class="read-more"><a href="single.php?id='.$row['id'].'">Continue reading <span>→</span></a></div>'.
-                    '</div>'.
-                    '</article>'.
-                    '</div>';
-            }
-        } 
-        catch (PDOException $e){
-            echo "连接服务器失败".$e->getMessage();
-        } 
-?>
+    <div id="blogList"> </div>
+    </div>
+
+    <div class="container" style="text-align: center">
+    <button id="pre" onclick="readPre()">pre</button>
+    <button id="next" onclick="readNext()">next</button>
     </div>
 </main>
 
@@ -87,10 +64,107 @@ define( 'DB_PORT', 3306 );
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="js/jquery.min.js"></script>  
     <script src="js/pace.min.js"></script>
-    <script src="js/modernizr.custom.js"></script>       
+    <script src="js/modernizr.custom.js"></script>  
+    <script type="text/javascript">
+    var min=parseInt(0)
+    var max=parseInt(7)
+
+    $(document).ready(function() {
+    $("#blogList").html("");
+    var data = {min,max}
+    $.post("getblog.php",data).done(function(response){
+        if(response.success){
+            for (var i = 0; i < response.idList.length; i++) {
+                var html = 
+                    '<div class="col-xs-12">'+
+                    '<article class="post">'+
+                    '<div>'+
+                        '<h1 class="post-title"><a href="single.php?id='+response.idList[i]+'">'+response.titleList[i]+'</a></h1>'+
+                        '<div class="entry-meta">'+response.catagoryList[i]+'|'+response.timeList[i]+'|Vicky </div>'+
+                    '</div>'+
+                    '<div class="entry-content clearfix" style="text-align: left">'+
+                    '<p>'+response.contentList[i].substring(0,400)+"..."+'</p>'+
+                    '<div class="read-more"><a href="single.php?id='+response.idList[i]+'">Continue reading <span>→</span></a></div>'+
+                    '</div>'+
+                    '</article>'+
+                    '</div>';
+                $("#blogList").append(html);
+            };
+        }
+        else{
+            alert("获取blog失败, " + response.msg)
+        }
+    })
+    });
+
+
+    readPre= function() {
+        if ((parseInt(min)-parseInt(7))>0) {
+            min=parseInt(min-7)
+            max=parseInt(max-7)
+        }
+        else {
+            min=parseInt(0)
+            max=parseInt(7)
+        }
+        $("#blogList").html("");
+        var datapre = {min,max} 
+        $.post("getblog.php",datapre).done(function(response){
+        if(response.success){
+            for (var i = 0; i < response.idList.length; i++) {
+                var html =                    '<div class="col-xs-12">'+
+                    '<article class="post">'+
+                    '<div>'+
+                        '<h1 class="post-title"><a href="single.php?id='+response.idList[i]+'">'+response.titleList[i]+'</a></h1>'+
+                        '<div class="entry-meta">'+response.catagoryList[i]+'|'+response.timeList[i]+'|Vicky </div>'+
+                    '</div>'+
+                    '<div class="entry-content clearfix" style="text-align: left">'+
+                    '<p>'+response.contentList[i].substring(0,400)+"..."+'</p>'+
+                    '<div class="read-more"><a href="single.php?id='+response.idList[i]+'">Continue reading <span>→</span></a></div>'+
+                    '</div>'+
+                    '</article>'+
+                    '</div>';
+                $("#blogList").append(html);
+            };
+        }
+        else{
+            alert("获取blog失败, " + response.msg)
+        }
+    })
+    }
+
+    readNext= function(){
+        var xmlHttp = new XMLHttpRequest()
+        min=parseInt(min+7)
+        max=parseInt(max+7)
+        $("#blogList").html("");
+        var datanext = {min,max}            
+        $.post("getblog.php",datanext).done(function(response){
+        if(response.success){
+            for (var i = 0; i < response.idList.length; i++) {
+                var html =                    '<div class="col-xs-12">'+
+                    '<article class="post">'+
+                    '<div>'+
+                        '<h1 class="post-title"><a href="single.php?id='+response.idList[i]+'">'+response.titleList[i]+'</a></h1>'+
+                        '<div class="entry-meta">'+response.catagoryList[i]+'|'+response.timeList[i]+'|Vicky </div>'+
+                    '</div>'+
+                    '<div class="entry-content clearfix" style="text-align: left">'+
+                    '<p>'+response.contentList[i].substring(0,400)+"..."+'</p>'+
+                    '<div class="read-more"><a href="single.php?id='+response.idList[i]+'">Continue reading <span>→</span></a></div>'+
+                    '</div>'+
+                    '</article>'+
+                    '</div>';
+                $("#blogList").append(html);
+            };
+        }
+        else{
+            alert("获取blog失败, " + response.msg)
+        }
+    })
+    }
+                    
+</script>        
 </body>
 </html> 
 
