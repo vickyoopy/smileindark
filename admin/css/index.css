@@ -3,6 +3,24 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: "Times New Roman", Georgia, Serif, sans-serif;
 	color: #dedede;
 }
+h1 {
+	font-size: 1.3;
+}
+h2 {
+	font-size: 1.2;
+}
+h3 {
+	font-size: 1.1;
+}
+h4 {
+	font-size: 1.0;
+}
+h5 {
+	font-size: 0.9;
+}
+h6 {
+	font-size: 0.8;
+}
 a {
 	outline: none;
 	color: #dedede;
@@ -40,35 +58,46 @@ a:hover {
 	bottom: -34px
 }
 .navbar-nav {
+	font-family: sans-serif;
+	list-style: none;
 	float: right;
+	position: relative;
+	z-index: 1003;
+	padding: 30px 0;
+	background-color: none;
+	border-color: none;
 }
-.navbar-nav ul {
+ul .navbar-nav {
+	margin: 0;
+	list-style-type: none;
+	position: relative;
 	overflow: inherit;
 }
-.navbar-nav ul li {
-	background: none;
-	padding-left: 15px;
-}
-.navbar-nav ul li a {
-	text-decoration: none;
+.navbar-nav li {
 	display: block;
-	border-radius: 5px;
+	position: relative;
+	float: left;
+	background: none;
+}
+.navbar-nav li a {
+	text-decoration: none;
 	line-height: 1.2em;
 	font-size: 1.2em;
-	letter-spacing: 0.4px;
+	color: #dedede;
 	-webkit-transition: all 200ms ease-in;
 	-o-transition: all 200ms ease-in;
 	-moz-transition: all 200ms ease-in;
-	padding: 0;
-	font-weight: bold;
+	padding-left: 15px;
 }
-.navbar-nav ul li.active a, .navbar-nav ul li a:hover {
+.navbar-nav li a:hover {
+	background: none;
 	color: #86aca3;
 }
 
 /* main content*/
 .main {
-	margin-top: 90px
+	margin-top: 90px;
+	font-family: "Times New Roman";
 }
 .username:focus {
 	border-color: #66afe9;
@@ -124,6 +153,7 @@ a:hover {
 .editor {
 	margin: auto;
 	width: 80%;
+	font-family: "Times New Roman";
 }
 input {
 	width: 270px;

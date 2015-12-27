@@ -56,12 +56,14 @@ $contentList=array();
                 $result['msg'] = $e->getMessage();
             }
 
+        
+
             $result["idList"] = $idList;
             $result["titleList"] = $titleList;
             $result["catagoryList"] = $catagoryList;
             $result["timeList"] = $timeList;
             $result["contentList"] = $contentList;
-            $jsonText = json_encode($result);
+            $jsonText = strip_tags(json_encode($result));
             $result = urldecode($jsonText);
             echo $result;
 

@@ -14,7 +14,7 @@ define( 'DB_PORT', 3306 );
 		$email=stripslashes(trim($_POST['email']));
 		$message=stripslashes(trim($_POST['message']));
 		
-		$sth = $dbh->prepare("INSERT INTO `comments` (`id`, `time`, `name`,`email`, `message`) VALUES (NULL,CURRENT_DATE(), ? , ?, ?);");
+		$sth = $dbh->prepare("INSERT INTO `comments` (`id`, `time`, `name`,`email`, `message`) VALUES (NULL,CURRENT_TIME(), ? , ?, ?);");
 		$result = $sth->execute(array($name,$email,$message));
 		
 		if($result) echo "瓢酱已收到评论(⊙o⊙)";

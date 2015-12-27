@@ -68,7 +68,7 @@ function check($mode){
     <title>Upload Photo</title>
     <link rel="shortcut icon" href="../favicon.ico"> 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/simditor.css" />
     <link rel="stylesheet" href="css/index.css" type="text/css">
 </head>
@@ -80,7 +80,7 @@ function check($mode){
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-        <ul class="nav navbar-nav">
+        <ul class="navbar-nav">
                 <li><a href="../index.php">Home</a></li>
                 <li ><a href="../blog/">Blog</a></li>  
                 <li><a href="index.php">Photos</a></li>   

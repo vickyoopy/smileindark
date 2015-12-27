@@ -15,7 +15,7 @@ define( 'DB_PORT', 3306 );
     <title>Blog</title>
     <link rel="shortcut icon" href="../favicon.ico"> 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css" type="text/css">
     
 </head>
@@ -27,7 +27,7 @@ define( 'DB_PORT', 3306 );
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-        <ul class="nav navbar-nav">
+        <ul class="navbar-nav">
                 <li><a href="../index.php">Home</a></li>
                 <li class="active"><a href="index.php">Blog</a></li>  
                 <li><a href="../photography/">Photos</a></li>   
