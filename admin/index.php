@@ -55,82 +55,99 @@ function check($mode){
 		echo $e->getMessage();
 	}
 	return false;
-}
-  
+}  
 ?>
-<!DOCTYPE html>
-<html lang="ch">
-<head>
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-	<title>Admin</title>
-	<link rel="shortcut icon" href="../favicon.ico"> 
-	<link rel="stylesheet" href="css/index.css" type="text/css" media="screen">
-	<link rel="stylesheet" type="text/css" href="css/media-queries.css" />
-	<link rel="stylesheet" type="text/css" href="css/simditor.css" />
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,700,700italic|Open+Sans+Condensed:300,700' rel="stylesheet" type='text/css'>
-	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-	<script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
-	<script type="text/javascript">
-		$.backstretch("../imgs/1.jpg");
-	</script>
-</head>
 
-<body>
-<!-- Header -->
-<div class="header-wrapper opacity">
-	<div class="header">
-		<div class="logo"><a href="http://smileindark.com/"><img src="../imgs/logo.png" alt="" /></a></div>
-		<div id="menu-wrapper">
-			<div id="menu" class="menu">
-				<ul id="tiny">
-					<li><a href="../index.html">Home</a></li>
-					<li><a href="../blog/">Blog</a></li>
-					<li><a href="../photography/">Photos</a></li>
-					<li><a href="../about/">About Me</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="clear"></div>
-	</div>
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin</title>
+    <link rel="shortcut icon" href="../favicon.ico"> 
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/simditor.css" />
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+</head>
+  
+<body style="background-color: black">
+<!-- Begin Header -->
+<div class="header">
+    <div class="logoimg"><img src="../imgs/logo.png"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+        <ul class="nav navbar-nav">
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="../blog/index.php">Blog</a></li>   
+                <li><a href="../photography/">Photos</a></li>   
+                <li><a href="../about/">About</a>         
+        </ul>  
+        </div>
+    </div>
 </div>
+</div>
+
 <!-- Login -->
 <?php
 if(!$isLogin)
 	echo 
-	'<div class="wrapper">'.
+
 	'	<form action="index.php" method="post">'.
 	'		<div><input type="text" name="username" class="username" placeholder="Username" autocomplete="off"/></div>'.
 	'		<div><input type="password" name="password" class="password" placeholder="Password" oncontextmenu="return false" onpaste="return false" /></div>'.
 	'		<button id="submit" type="submit">Sign in</button>'.
-	'	</form> '.
-	'</div>  '.
-	'<div class="alert" style="text-align: center">'.
-	'	<h2>Alert</h2>'.
-	'	<div class="alert_con">'.
-	'		<p id="ts"></p>'.
-	'		<p style="line-height:70px"><a class="btn">OK</a></p>'.
-	'	</div>'.
-	'</div>';
+	'	</form> ';
+	
 ?>
+	
 <!-- Admin -->
 <?php
 if($isLogin)
 	echo 
+	
 	'<div class="editor">'.
-	'<textarea id="editor" placeholder="Balabala" autofocus></textarea>'.
-	'<button onclick="save()">显示Html</button>'.
-	'<span>        </span>'.
-	'<button id="clear">设置内容</button>'.
+	'TITLE:<input id="title" type="text" name="post_name">'.
+	'<br />'.
+	'URL  :<input id="posturl" type="text" name="post_url">'.
+	'<br />'.
+	'<form>
+		<select id="catagory" name="post_catagory">
+		<option value="碎碎念">碎碎念</option>
+		<option value="技术贴">技术贴</option>
+		<option value="旅行志">旅行志</option>
+		</select>
+	</form>'.
+	'<br />'.
+	'<textarea id="editor" placeholder="" autofocus></textarea>'.
+	'<br />'.
+	'<button onclick="save()">发布</button>'.
+	'<br />'.
 	'</div>';
 ?>
-<!-- Footer -->
-<div class="footer-wrapper">
-	copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a> | <a href="index.php">Admin</a>
-</div>
+
+
+ <!-- Footer -->
+    <div class="footer-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+            copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a> | <a href="../admin/index.php">Admin</a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+ <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+ <script src="js/bootstrap.min.js"></script>
+<!-- Simditor Dependence -->
 <script src="js/supersized.3.2.7.min.js"></script>
 <script src="js/supersized-init.js"></script>
-<!-- Simditor Dependence -->
 <script type="text/javascript" src="js/module.min.js"></script>
 <script type="text/javascript" src="js/hotkeys.min.js"></script>
 <script type="text/javascript" src="js/uploader.min.js"></script>
@@ -138,15 +155,21 @@ if($isLogin)
 <script type="text/javascript">
 var editor = new Simditor({
   textarea: $('#editor'),
-  placeholder: '彭瑶真漂亮'
+  placeholder: '写点啥呢...'
 });
-
 var save = function(){
-	alert(editor.getValue());
+	var data = {
+		title:$('#title').val(),
+		catagory:$('#catagory').val(),
+		content:editor.getValue()
+	}
+	var submitting = $.post("post.php",data);
+	submitting.done(function(response){
+		alert(response);
+	})
 };
-$('#clear').click(function(){
-	editor.setValue('胖叔叔真帅');
-});
 </script>
+
+
 </body>
 </html> 

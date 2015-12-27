@@ -1,0 +1,133 @@
+/*  general */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Times New Roman", Georgia, Serif, sans-serif;
+    color: #dedede;
+}
+h1 {
+    font-size: 1.2em;
+}
+h2 {
+    font-size: 1.0em;
+}
+a {
+    outline: none;
+    color: #dedede;
+}
+a:link {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    color: #86aca3
+}
+
+/*  header */
+.header {
+    background: rgba(0, 0, 0, 0.33);
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.55), inset 0 -1px 0 rgba(255, 255, 255, 0.09);
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.55), inset 0 -1px 0 rgba(255, 255, 255, 0.09);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.55), inset 0 -1px 0 rgba(255, 255, 255, 0.09);
+    z-index: 101;
+    background-size: cover;
+    padding: 50px 0 0;
+    text-align: center;
+    min-height: 150px;
+    position: relative
+}
+.logoimg {
+    position: absolute;
+    left: 1%;
+    right: 1%;
+    bottom: -34px
+}
+.navbar-nav {
+    float: right;
+}
+.navbar-nav ul {
+    overflow: inherit;
+}
+.navbar-nav ul li {
+    background: none;
+    padding-left: 15px;
+}
+.navbar-nav ul li a {
+    text-decoration: none;
+    display: block;
+    border-radius: 5px;
+    line-height: 1.2em;
+    font-size: 1.2em;
+    letter-spacing: 0.4px;
+    -webkit-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    padding: 0;
+    font-weight: bold;
+}
+.navbar-nav ul li.active a, .navbar-nav ul li a:hover {
+    color: #86aca3;
+}
+
+/* main content*/
+.wrapper {
+    margin-top: 90px
+}
+#pictures, #webcam {
+    margin: 10px 0 0;
+}
+#main {
+    width: 80%;
+    margin: 15px auto;
+    padding: 15px;
+    color: #fff;
+    border: 2px solid #FFF;
+    box-shadow: 0px 0px 10px #CCC;
+    border-radius: 5px;
+}
+#main #webcam {
+    height: 640px;
+    width: 100%;
+}
+#main #plist {
+    margin: 10px 0;
+    border-radius: 5px;
+    background: #CCC;
+    padding: 10px;
+}
+#main img {
+    margin-bottom: 10px;
+    background: #F8F8F8;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #888;
+}
+.clear {
+    clear: both;
+}
+#main ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#main .photobooth {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* FOOTER */
+.footer-wrapper {
+    background: rgba(0, 0, 0, 0.44);
+    margin-top: 60px;
+    padding: 10px 0;
+    height: 2em;
+    line-height: 2em;
+    color: #b9b9b9;
+    font-size: 0.8em;
+    text-align: center;
+    text-decoration: none;
+}
+.row {
+}
