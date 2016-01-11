@@ -57,6 +57,34 @@ define( 'DB_PORT', 3306 );
                 $sth->execute();
                 $result = $sth->fetch();
                 $blogid = $id;
+                $sth->closeCursor();
+                $views= $result['visits'];
+                $updateviews = $views;
+
+                //更新views
+                $cookie_name = "viewed";
+                if(!isset($_COOKIE[$cookie_name])){
+                    $updateviews = $views + 1;
+                    $sth1 = $dbh->prepare('UPDATE posts SET visits = ? where id = ?  ');
+                    $sth1->bindParam(1,$updateviews,PDO::PARAM_INT);
+                    $sth1->bindParam(2,$id,PDO::PARAM_INT);
+                    $sth1->execute();
+                    //set cookie
+                    $cookie_value = strval($blogid);
+                    setcookie($cookie_name, $cookie_value, time() + (86400), "/");
+                }
+                else if(!in_array($blogid,explode(',',$_COOKIE[$cookie_name])))  {
+                    $updateviews = $views + 1;
+                    $sth1 = $dbh->prepare('UPDATE posts SET visits = ? where id = ?  ');
+                    $sth1->bindParam(1,$updateviews,PDO::PARAM_INT);
+                    $sth1->bindParam(2,$id,PDO::PARAM_INT);
+                    $sth1->execute();
+                    //set cookie
+                    $cookie_value = $_COOKIE[$cookie_name].','.strval($blogid);
+                    setcookie($cookie_name, $cookie_value, time() + (86400), "/");
+                }
+                
+
             }
             else if (isset($_GET['posturl'])) {
                 $posturl=$_GET['posturl'];
@@ -65,12 +93,50 @@ define( 'DB_PORT', 3306 );
                 $sth->execute();
                 $result = $sth->fetch();
                 $blogid = $result['id'];
+                $sth->closeCursor();
+                $views= $result['visits'];
+                $updateviews = $views;
+                
+                //更新views
+                $cookie_name = "viewed";
+                if(!isset($_COOKIE[$cookie_name])){
+                    $updateviews = $views + 1;
+                    $sth1 = $dbh->prepare('UPDATE posts SET visits = ? where id = ?  ');
+                    $sth1->bindParam(1,$updateviews,PDO::PARAM_INT);
+                    $sth1->bindParam(2,$id,PDO::PARAM_INT);
+                    $sth1->execute();
+                    //set cookie
+                    $cookie_value = strval($blogid);
+                    setcookie($cookie_name, $cookie_value, time() + (86400), "/");
+                }
+                else if(!in_array($blogid,explode(',',$_COOKIE[$cookie_name])))  {
+                   
+                    $updateviews = $views + 1;
+                    $sth1 = $dbh->prepare('UPDATE posts SET visits = ? where id = ?  ');
+                    $sth1->bindParam(1,$updateviews,PDO::PARAM_INT);
+                    $sth1->bindParam(2,$id,PDO::PARAM_INT);
+                    $sth1->execute();
+                    //set cookie
+                    $cookie_value = $_COOKIE[$cookie_name].','.strval($blogid);
+                    setcookie($cookie_name, $cookie_value, time() + (86400), "/");
+                }
+
             }
+            
+            //计算评论总数
+            $dbh2 = new PDO('mysql:host='.DB_HOST.';port='.DB_PORT.';dbname='.DB_NAME, DB_USER, DB_PASSWORD);
+            $dbh2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $dbh2->exec("set names 'utf8'");
+            $sth2 = $dbh2->prepare('SELECT * FROM comments where blogid = ? Order by time desc ');
+            $sth2->bindParam(1, $blogid, PDO::PARAM_STR);
+            $sth2->execute();
+            $totalcomments = count($sth2->fetchAll());
+
             echo
                 '<article class="post" style="color:white">'.
                 '<div>'.
                     '<h1 class="post-title">'.$result['title'].'</h1>'.
-                    '<div class="entry-meta">'.$result['catagory'].'|'.$result['time'].'|Vicky </div>'.
+                    '<div class="entry-meta">'.$result['catagory'].'|'.$result['time'].'|'.$updateviews.'views|'.$totalcomments.'comments</div>'.
                 '</div>'.
                 '<div class="entry-content clearfix">'.
                     '<p>'.$result['content'].'</p>'.

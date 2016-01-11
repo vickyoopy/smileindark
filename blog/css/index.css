@@ -58,7 +58,7 @@ a:hover {
     bottom: -34px
 }
 .navbar-nav {
-    font-family: sans-serif;
+    font-family: "Times New Roman", Georgia, Serif, sans-serif;
     list-style: none;
     float: right;
     position: relative;
@@ -109,6 +109,8 @@ ul .navbar-nav {
     margin-bottom: 20px;
     float: left;
     width: 100%;
+    display: block;
+    height: auto;
 }
 .post-title {
     text-align: center;

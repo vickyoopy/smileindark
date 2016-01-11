@@ -7,16 +7,18 @@ define( 'DB_HOST', 'localhost' );
 define( 'DB_PORT', 3306 );
 $result = array(
                 "success"=>false,
-                 "msg"=>""
+                 "msg"=>"",
+                 "nexthide"=>false
+
             );
 $min=$_POST['min'];
-$max=$_POST['max'];
-
+$offset=5;
 $idList = array();
 $titleList=array();
 $catagoryList=array();
 $timeList=array();
 $contentList=array();
+$visitsList=array();
 
         try{
 
@@ -27,16 +29,18 @@ $contentList=array();
             $test = $dbh1->prepare('SELECT id FROM posts');
             $test->execute();
             $total = count($test->fetchAll());
-            if ($max > $total) {
-                $min = $total - 7;
+            if (($min+5) >= $total) {
+                $offset = $total - $min;
+                $result["nexthide"] = true;
             }
 
 
             $dbh = new PDO('mysql:host='.DB_HOST.';port='.DB_PORT.';dbname='.DB_NAME, DB_USER, DB_PASSWORD);
             $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $dbh->exec("set names 'utf8'");
-            $sth = $dbh->prepare('SELECT * FROM posts Order by time DESC LIMIT ?,7');
+            $sth = $dbh->prepare('SELECT * FROM posts Order by time DESC LIMIT ?,?');
             $sth->bindParam(1, $min, PDO::PARAM_STR);
+            $sth->bindParam(2, $offset, PDO::PARAM_INT);
             $sth->execute();
             $res = $sth->fetchAll();
 
@@ -45,7 +49,8 @@ $contentList=array();
                 $titleList[]=$row['title'];
                 $catagoryList[]=$row['catagory'];
                 $timeList[]=$row['time'];
-                $contentList[]=$row['content'];
+                $contentList[]=strip_tags($row['content']);
+                $visitsList[]=$row['visits'];
             }
 
             $result["success"] = true;
@@ -63,7 +68,10 @@ $contentList=array();
             $result["catagoryList"] = $catagoryList;
             $result["timeList"] = $timeList;
             $result["contentList"] = $contentList;
-            $jsonText = strip_tags(json_encode($result));
+            $result['visitsList']=$visitsList;
+
+
+            $jsonText = json_encode($result);
             $result = urldecode($jsonText);
             echo $result;
 

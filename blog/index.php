@@ -3,7 +3,7 @@ define( 'DB_NAME', 'smileindark' );
 define( 'DB_USER', 'admin' );
 define( 'DB_PASSWORD', 'vz28yt90' );
 define( 'DB_HOST', 'localhost' );
-define( 'DB_PORT', 3306 );
+define( 'DB_PORT', 3305 );
 ?>
 
 <!DOCTYPE html>
@@ -40,6 +40,7 @@ define( 'DB_PORT', 3306 );
 
 <!-- display blog -->
 <main class="main" role="main">
+
     <div class="container">
     <div id="blogList"> </div>
     </div>
@@ -61,36 +62,51 @@ define( 'DB_PORT', 3306 );
         </div>
     </div>
     </div>
+    
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/pace.min.js"></script>
     <script src="js/modernizr.custom.js"></script>  
+    <script src="js/waterfall-light.js"></script>
     <script type="text/javascript">
     var min=parseInt(0)
-    var max=parseInt(7)
-
     $(document).ready(function() {
     $("#blogList").html("");
-    var data = {min,max}
+    var data = {min}
     $.post("getblog.php",data).done(function(response){
         if(response.success){
             for (var i = 0; i < response.idList.length; i++) {
                 var html = 
-                    '<div class="col-xs-12">'+
+                    '<div class="col-xs-12 col-lg-6">'+
                     '<article class="post">'+
                     '<div>'+
                         '<h1 class="post-title"><a href="single.php?id='+response.idList[i]+'">'+response.titleList[i]+'</a></h1>'+
-                        '<div class="entry-meta">'+response.catagoryList[i]+'|'+response.timeList[i]+'|Vicky </div>'+
+                        '<div class="entry-meta">'+response.catagoryList[i]+'|'+response.timeList[i]+'|'+ response.visitsList[i]+'views</div>'+
                     '</div>'+
                     '<div class="entry-content clearfix" style="text-align: left">'+
                     '<p>'+response.contentList[i].substring(0,401)+"..."+'</p>'+
                     '</div>'+
                     '<div class="read-more"><a href="single.php?id='+response.idList[i]+'">Continue reading <span>→</span></a></div>'+
                     '</article>'+
-                    '</div>';
+                    '</a></div>';
                 $("#blogList").append(html);
             };
+            $('#blogList').waterfall();
+            if (min <= 0) { 
+                $('#pre').attr("disabled","disabled")
+            }
+            else{
+                $('#pre').removeAttr("disabled");
+             }
+            if (response.nexthide){
+                $("#next").attr("disabled","disabled")
+            }
+            else{
+                $("#next").removeAttr("disabled")
+            }
+
         }
         else{
             alert("获取blog失败, " + response.msg)
@@ -98,26 +114,25 @@ define( 'DB_PORT', 3306 );
     })
     });
 
-
     readPre= function() {
-        if ((parseInt(min)-parseInt(7))>0) {
-            min=parseInt(min-7)
-            max=parseInt(max-7)
+        if ((parseInt(min)-parseInt(5))>0) {
+            min=parseInt(min-5)
+             $('#pre').removeAttr("disabled")
         }
         else {
             min=parseInt(0)
-            max=parseInt(7)
+             $('#pre').attr("disabled","disabled")
         }
         $("#blogList").html("");
-        var datapre = {min,max} 
+        var datapre = {min} 
         $.post("getblog.php",datapre).done(function(response){
         if(response.success){
             for (var i = 0; i < response.idList.length; i++) {
-                var html =                    '<div class="col-xs-12">'+
+                var html = '<div class="col-xs-12 col-lg-6">'+
                     '<article class="post">'+
                     '<div>'+
                         '<h1 class="post-title"><a href="single.php?id='+response.idList[i]+'">'+response.titleList[i]+'</a></h1>'+
-                        '<div class="entry-meta">'+response.catagoryList[i]+'|'+response.timeList[i]+'|Vicky </div>'+
+                        '<div class="entry-meta">'+response.catagoryList[i]+'|'+response.timeList[i]+'|'+ response.visitsList[i]+'views</div>'+
                     '</div>'+
                     '<div class="entry-content clearfix" style="text-align: left">'+
                     '<p>'+response.contentList[i].substring(0,400)+"..."+'</p>'+
@@ -128,6 +143,13 @@ define( 'DB_PORT', 3306 );
                     '</div>';
                 $("#blogList").append(html);
             };
+            if (response.nexthide){
+                $("#next").attr("disabled","disabled")
+            }
+            else{
+                $("#next").removeAttr("disabled")
+            }
+            $('#blogList').waterfall();
         }
         else{
             alert("获取blog失败, " + response.msg)
@@ -137,18 +159,17 @@ define( 'DB_PORT', 3306 );
 
     readNext= function(){
         var xmlHttp = new XMLHttpRequest()
-        min=parseInt(min+7)
-        max=parseInt(max+7)
+        min=parseInt(min+5)
         $("#blogList").html("");
-        var datanext = {min,max}            
+        var datanext = {min}            
         $.post("getblog.php",datanext).done(function(response){
         if(response.success){
             for (var i = 0; i < response.idList.length; i++) {
-                var html =                    '<div class="col-xs-12">'+
+                var html = '<div class="col-xs-12 col-lg-6">'+
                     '<article class="post">'+
                     '<div>'+
                         '<h1 class="post-title"><a href="single.php?id='+response.idList[i]+'">'+response.titleList[i]+'</a></h1>'+
-                        '<div class="entry-meta">'+response.catagoryList[i]+'|'+response.timeList[i]+'|Vicky </div>'+
+                        '<div class="entry-meta">'+response.catagoryList[i]+'|'+response.timeList[i]+'|'+ response.visitsList[i]+'views</div>'+
                     '</div>'+
                     '<div class="entry-content clearfix" style="text-align: left">'+
                     '<p>'+response.contentList[i].substring(0,400)+"..."+'</p>'+
@@ -158,14 +179,29 @@ define( 'DB_PORT', 3306 );
                     '</div>';
                 $("#blogList").append(html);
             };
+            $('#blogList').waterfall();
+            if (min <= 0) { 
+                $('#pre').attr("disabled","disabled")
+            }
+            else{
+                $('#pre').removeAttr("disabled");
+            }
+            if (response.nexthide){
+                $("#next").attr("disabled","disabled")
+            }
+            else{
+                $("#next").removeAttr("disabled")
+            }
+  
         }
         else{
             alert("获取blog失败, " + response.msg)
         }
+
+
     })
-    }
-                    
-</script>        
+    }                      
+</script>      
 </body>
 </html> 
 
