@@ -7,53 +7,103 @@
     <title>Photos</title>
     <link rel="shortcut icon" href="../favicon.ico">
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/index.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <link href="css/photo.css" rel="stylesheet">
 </head>
 
 
-<body style="background-color: black">
+<body>
 <!-- Begin Header -->
-<div class="header">
-    <div class="logoimg"><img src="../imgs/logo.png"></div>
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-        <ul class="navbar-nav">
-                <li><a href="../index.php">Home</a></li>
-                <li ><a href="../blog/index.php">Blog</a></li>  
-                <li><a href="index.php">Photos</a></li>   
-                <li><a href="../about/index.php">About</a>         
-        </ul>  
-        </div>
-    </div>
-</div>
-</div>
+<header>
+<nav id="menu" class="nav">                 
+                    <ul>
+                        <li>
+                            <a href="../index.php">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-home"></i>
+                                </span>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../blog/index.php">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-blog"></i>
+                                </span>
+                                <span>Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-portfolio"></i>
+                                </span>
+                                <span>Photos</span>
+                            </a>
+                        </li>
+                  <li>
+                            <a href="http://vicky-peng.tumblr.com/">
+                                <span class="icon"> 
+                                    <i aria-hidden="true" class="icon-services"></i>
+                                </span>
+                                <span>Tumblr</span>
+                            </a>
+                        </li>
+                    
+                        
+                        <li>
+                            <a href="../admin/index.php">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-team"></i>
+                                </span>
+                                <span>Admin</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../contact/index.php">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-contact"></i>
+                                </span>
+                                <span>Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+</nav>
+</header>
+
 
 
 <!-- Begin Wrapper -->
 <main class="main">
 
+<div class="container"><div class="row"><div class="col-sm-12">
+<div id="div1">
+<p>TRAVEL PHOTOGRAPGY</p>
+<ul>
+    <div id="travellist"></div>
+</ul></div>
+</div></div></div>
 
-<div class="imgContainer">
-    <!--大图-->
-    <div class="detailImg" > 
-        <a id="detailImg-pre">&lt;</a>
-        <div id="detailImg-box" class="box"> </div>
-        <a id="detailImg-next">&gt;</a> 
-    </div>
-    <!--小图-->
-    <div class="smallImg"> 
-        <a id="smallImg-pre"></a>
-        <div id="smallImg-box" class="box">
-            <ul id="smallImg-ul" class="imgUl">
-            </ul>
-        </div>
-        <a id="smallImg-next"></a> 
-    </div>
-</div>
+<div class="container"><div class="row"><div class="col-sm-12">
+<div id="div2">
+<p>DAILY SNAPSHOT</p>
+<ul>
+    <div id="dailylist"></div>
+</ul></div>
+</div></div></div>
 
+<div class="container"><div class="row"><div class="col-sm-12">
+<div id="div3">
+<p>DESIGN STUDIO</p>
+<ul>
+    <div id="designlist"></div>
+</ul></div>
+</div></div></div>
 
+<div class="container"><div class="row"><div class="col-sm-12">
+<button><a href="photoadmin.php">upload photos</a></button>
+</div></div></div>
 </main>
 <!-- end Wrapper -->
 
@@ -61,19 +111,20 @@
     <div class="footer-wrapper">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
-            copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a> | <a href="photoadmin.php">Upload</a> 
+             <div class="col-sm-12">
+            copyright©2014-2025| Vicky.P.Y | <a href="mailto:vickypy0802@gmail.com?subject=Hello,Vicky"> Email Me</a> 
             </div>
         </div>
     </div>
     </div> 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery-2.1.1.min.js"></script>  
-<script src="js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 <script src="upload.js"></script>  
+<script src="../js/modernizr.custom.js"></script>
 
 </body>
 </html>
 </body>
-</html> 
+</html>

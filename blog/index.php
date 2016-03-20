@@ -15,28 +15,71 @@ define( 'DB_PORT', 3305 );
     <title>Blog</title>
     <link rel="shortcut icon" href="../favicon.ico"> 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/index.css" type="text/css">
+    <link rel="stylesheet" href="css/blog.css" type="text/css">
     
 </head>
   
 <body style="background-color: black">
 <!-- Begin Header -->
-<div class="header">
-    <div class="logoimg"><img src="../imgs/logo.png"></div>
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-        <ul class="navbar-nav">
-                <li><a href="../index.php">Home</a></li>
-                <li><a href="index.php">Blog</a></li>  
-                <li><a href="../photography/">Photos</a></li>   
-                <li><a href="../about/">About</a>         
-        </ul>  
-        </div>
-    </div>
-</div>
-</div>
+<header>
+<nav id="menu" class="nav">                 
+                    <ul>
+                        <li>
+                            <a href="../index.php">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-home"></i>
+                                </span>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-blog"></i>
+                                </span>
+                                <span>Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../photography/index.php">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-portfolio"></i>
+                                </span>
+                                <span>Photos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://vicky-peng.tumblr.com/">
+                                <span class="icon"> 
+                                    <i aria-hidden="true" class="icon-services"></i>
+                                </span>
+                                <span>Tumblr</span>
+                            </a>
+                        </li>
+                    
+                        
+                        <li>
+                            <a href="../admin/index.php">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-team"></i>
+                                </span>
+                                <span>Admin</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../contact/index.php">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-contact"></i>
+                                </span>
+                                <span>Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+</nav>
+</header>
+
 
 <!-- display blog -->
 <main class="main" role="main">
@@ -57,7 +100,7 @@ define( 'DB_PORT', 3305 );
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-            copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a> | <a href="../admin/index.php">Admin</a>
+            copyright©2014-2025| Vicky.P.Y | <a href="mailto:vickypy0802@gmail.com?subject=Hello,Vicky"> Email Me</a> 
             </div>
         </div>
     </div>
@@ -66,9 +109,9 @@ define( 'DB_PORT', 3305 );
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
     <script src="js/pace.min.js"></script>
-    <script src="js/modernizr.custom.js"></script>  
+    <script src="../js/modernizr.custom.js"></script>  
     <script src="js/waterfall-light.js"></script>
     <script type="text/javascript">
     var min=parseInt(0)
@@ -88,7 +131,7 @@ define( 'DB_PORT', 3305 );
                     '<div class="entry-content clearfix" style="text-align: left">'+
                     '<p>'+response.contentList[i].substring(0,401)+"..."+'</p>'+
                     '</div>'+
-                    '<div class="read-more"><a href="single.php?id='+response.idList[i]+'">Continue reading <span>→</span></a></div>'+
+                    '<div class="read-more"><a href="single.php?id='+response.idList[i]+'">Continue reading <span>�&#65533;</span></a></div>'+
                     '</article>'+
                     '</a></div>';
                 $("#blogList").append(html);
@@ -137,7 +180,7 @@ define( 'DB_PORT', 3305 );
                     '<div class="entry-content clearfix" style="text-align: left">'+
                     '<p>'+response.contentList[i].substring(0,400)+"..."+'</p>'+
                      '</div>'+
-                    '<div class="read-more"><a href="single.php?id='+response.idList[i]+'">Continue reading <span>→</span></a></div>'+
+                    '<div class="read-more"><a href="single.php?id='+response.idList[i]+'">Continue reading <span>�&#65533;</span></a></div>'+
                    
                     '</article>'+
                     '</div>';
@@ -174,7 +217,7 @@ define( 'DB_PORT', 3305 );
                     '<div class="entry-content clearfix" style="text-align: left">'+
                     '<p>'+response.contentList[i].substring(0,400)+"..."+'</p>'+
                      '</div>'+
-                    '<div class="read-more"><a href="single.php?id='+response.idList[i]+'">Continue reading <span>→</span></a></div>'+
+                    '<div class="read-more"><a href="single.php?id='+response.idList[i]+'">Continue reading <span>�&#65533;</span></a></div>'+
                     '</article>'+
                     '</div>';
                 $("#blogList").append(html);
@@ -201,10 +244,6 @@ define( 'DB_PORT', 3305 );
 
     })
     }                      
-</script>      
+</script>   
 </body>
-</html> 
-
-
-
-
+</html>

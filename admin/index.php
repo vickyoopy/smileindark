@@ -69,40 +69,83 @@ function check($mode){
     <title>Admin</title>
     <link rel="shortcut icon" href="../favicon.ico"> 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/simditor.css" />
-    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <link rel="stylesheet" href="../css/index.css" type="text/css">
+    <link rel="stylesheet" href="css/admin.css" type="text/css">
 </head>
   
-<body style="background-color: black">
+<body>
 <!-- Begin Header -->
-<div class="header">
-    <div class="logoimg"><img src="../imgs/logo.png"></div>
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-        <ul class="navbar-nav">
-                <li><a href="../index.php">Home</a></li>
-                <li><a href="../blog/index.php">Blog</a></li>   
-                <li><a href="../photography/">Photos</a></li>   
-                <li><a href="../about/">About</a>         
-        </ul>  
-        </div>
-    </div>
-</div>
-</div>
+<header>
+<nav id="menu" class="nav">                 
+                    <ul>
+                        <li>
+                            <a href="../index.php">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-home"></i>
+                                </span>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../blog/index.php">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-blog"></i>
+                                </span>
+                                <span>Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../photography/index.php">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-portfolio"></i>
+                                </span>
+                                <span>Photos</span>
+                            </a>
+                        </li>
+                             <li>
+                            <a href="http://vicky-peng.tumblr.com/">
+                                <span class="icon"> 
+                                    <i aria-hidden="true" class="icon-services"></i>
+                                </span>
+                                <span>Tumblr</span>
+                            </a>
+                        </li>
+                    
+                        
+                        <li>
+                            <a href="#">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-team"></i>
+                                </span>
+                                <span>Admin</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../contact/index.php">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-contact"></i>
+                                </span>
+                                <span>Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+</nav>
+</header>
 
 <!-- Login -->
 <?php
 if(!$isLogin)
 	echo 
-
+	'<div class="wrapper">'.
+	'<h2>Welcome, Yao</h2>'.
 	'	<form action="index.php" method="post">'.
 	'		<div><input type="text" name="username" class="username" placeholder="Username" autocomplete="off"/></div>'.
 	'		<div><input type="password" name="password" class="password" placeholder="Password" oncontextmenu="return false" onpaste="return false" /></div>'.
-	'		<button id="submit" type="submit">Sign in</button>'.
-	'	</form> ';
-	
+	'		<button id="login-button" type="submit">Log in</button>'.
+	'	</form> '.
+	'</div>';	
 ?>
 	
 <!-- Admin -->
@@ -136,7 +179,7 @@ if($isLogin)
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-            copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a> | <a href="../admin/index.php">Admin</a>
+            copyright©2014-2025| Vicky.P.Y | <a href="mailto:vickypy0802@gmail.com?subject=Hello,Vicky"> Email Me</a> 
             </div>
         </div>
     </div>
@@ -144,14 +187,18 @@ if($isLogin)
 
  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
  <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
- <script src="js/bootstrap.min.js"></script>
+ <script src="../js/bootstrap.min.js"></script>
+ <script src="../js/modernizr.custom.js"></script>
 <!-- Simditor Dependence -->
 <script src="js/supersized.3.2.7.min.js"></script>
 <script src="js/supersized-init.js"></script>
-<script type="text/javascript" src="js/module.min.js"></script>
-<script type="text/javascript" src="js/hotkeys.min.js"></script>
-<script type="text/javascript" src="js/uploader.min.js"></script>
-<script type="text/javascript" src="js/simditor.min.js"></script>
+<script src="js/handlers.js"></script>
+<script src="js/index.js"></script>
+<script src="js/swfupload.js"></script>
+<script src="js/module.min.js"></script>
+<script src="js/hotkeys.min.js"></script>
+<script src="js/uploader.min.js"></script>
+<script src="js/simditor.min.js"></script>
 <script type="text/javascript">
 var editor = new Simditor({
   textarea: $('#editor'),
@@ -169,7 +216,5 @@ var save = function(){
 	})
 };
 </script>
-
-
 </body>
 </html> 

@@ -1,0 +1,107 @@
+.post {
+    font-family: "Times New Roman";
+    color: #dedede;
+    background: transparent;
+    border: 2px solid #aaa;
+    box-shadow: 0px 0px 10px #CCC;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    float: left;
+    width: 100%;
+    display: block;
+    height: auto;
+}
+.post-title {
+    text-align: center;
+    font-size: 1.2em;
+    font-family: "Times New Roman";
+    color: #dedede;
+    background: transparent;
+}
+.entry-meta {
+    font-family: "Times New Roman";
+    color: #b9b9b9;
+    text-align: center;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    padding-bottom: 20px;
+}
+.entry-content {
+    font-family: "Times New Roman";
+    color: #dedede;
+    background: transparent;
+    font-size: 1.0em;
+    line-height: 1.2em;
+word-break:break-all;
+}
+
+/* Read More Button  */
+.read-more {
+    font-family: "Times New Roman";
+    color: #dedede;
+    background: transparent;
+    word-spacing: 1px;
+    text-align: center;
+    font-size: 0.8em;
+    margin: 5px 0;
+}
+.read-more a {
+    padding: 5px;
+    line-height: 1.2em;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.read-more a:hover {
+    color: #aaa;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+/* Contact Form */
+.contact-form input {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.0em;
+    line-height: 1.2em;
+    transition: 0.4s border-color linear;
+}
+.contact-form textarea {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.0em;
+    line-height: 1.2em;
+    min-height: 183px;
+    transition: 0.4s border-color linear;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+    box-shadow: 0px 0px 10px #CCC;
+}
+.btn-send {
+    background: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    display: inline-block;
+    letter-spacing: 1px;
+    position: relative;
+    transition: all 0.3s;
+    text-align: center;
+    background: none;
+    min-width: 200px;
+    line-height: 1.2em;
+    font-size: 1.0em;
+    color: #aaa;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}

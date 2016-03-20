@@ -1,4 +1,17 @@
 /*  general */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 1.0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main {
+    display: block;
+}
 h1, h2, h3, h4, h5, h6 {
     font-family: "Times New Roman", Georgia, Serif, sans-serif;
     color: #dedede;
@@ -37,62 +50,190 @@ a:visited {
 a:hover {
     color: #86aca3
 }
+ol, ul, li {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+body {
+    background-color: black;
+}
 
 /*  header */
-.header {
-    background: rgba(0, 0, 0, 0.33);
+header {
     -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.55), inset 0 -1px 0 rgba(255, 255, 255, 0.09);
     -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.55), inset 0 -1px 0 rgba(255, 255, 255, 0.09);
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.55), inset 0 -1px 0 rgba(255, 255, 255, 0.09);
-    z-index: 101;
-    background-size: cover;
-    padding: 50px 0 0;
+    z-index: 9999999;
+    width: 100%;
+    padding: 30px 20px 0 0;
     text-align: center;
-    min-height: 150px;
-    position: relative
-}
-.logoimg {
-    position: absolute;
-    left: 1%;
-    right: 1%;
-    bottom: -34px
-}
-.navbar-nav {
-    font-family: "Times New Roman", Georgia, Serif, sans-serif;
-    list-style: none;
-    float: center;
     position: relative;
-    z-index: 1003;
-    padding: 30px 0;
-}
-.navbar-nav li {
-    float: left;
-    background: none;
-}
-.navbar-nav li a {
-    text-decoration: none;
-    line-height: 1.2em;
-    font-size: 1.2em;
-    color: #dedede;
-    -webkit-transition: all 200ms ease-in;
-    -o-transition: all 200ms ease-in;
-    -moz-transition: all 200ms ease-in;
-    padding-left: 15px;
-}
-.navbar-nav li a:hover {
-    background: none;
-    color: #86aca3;
+    margin-bottom: 1em;
 }
 
-/* main content*/
-.main {
-    margin-top: 90px
+/*nav */
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot');
+    src: url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'), url('../fonts/icomoon.woff') format('woff'), url('../fonts/icomoon.ttf') format('truetype'), url('../fonts/icomoon.svg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Windows Chrome ugly fix http://stackoverflow.com/questions/13674808/chrome-svg-font-rendering-breaks-layout/14345363#14345363 */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: 'icomoon';
+        src: url('../fonts/icomoon.svg#icomoon') format('svg');
+    }
+    ;
+}
+.icon-team, .icon-blog, .icon-home, .icon-portfolio, .icon-services, .icon-contact, .icon-menu {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+.icon-team:before {
+    content: "\e000";
+}
+.icon-blog:before {
+    content: "\e001";
+}
+.icon-home:before {
+    content: "\e002";
+}
+.icon-portfolio:before {
+    content: "\e003";
+}
+.icon-services:before {
+    content: "\e004";
+}
+.icon-contact:before {
+    content: "\e005";
+}
+.icon-menu:before {
+    content: "\f0c9";
+}
+a, li {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* Global CSS that are applied for all screen sizes */
+.nav ul {
+    width: 80%;
+    margin: 0 auto;
+    list-style: none;
+    line-height: 1.2em;
+    font-weight: 300;
+    float: center;
+    position: relative;
+}
+.nav li {
+    background: rgba(0, 0, 0, 0.33);
+}
+.nav a {
+    display: block;
+    text-decoration: none;
+    -webkit-transition: color .5s, background .5s, height .5s;
+    -moz-transition: color .5s, background .5s, height .5s;
+    -o-transition: color .5s, background .5s, height .5s;
+    -ms-transition: color .5s, background .5s, height .5s;
+    transition: color .5s, background .5s, height .5s;
+}
+.nav li span {
+    display: block;
+    margin: 1em;
+    font-family: "Times New Roman", Georgia, Serif, sans-serif;
+    color: #dedede;
+    font-size: 1.2em;
+}
+.nav i {
+
+    /* Make the font smoother for Chrome */
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+/* For screen bigger than 800px */
+@media (min-width:800px) {
+
+    /* Transforms the list into a horizontal navigation */
+    .nav li {
+        float: left;
+        width: 16.66666666666667%;
+        text-align: center;
+    }
+    .nav a {
+        display: block;
+        width: auto;
+    }
+    .nav i {
+        position: relative;
+        display: inline-block;
+        margin: 0 auto;
+        padding: 0.4em;
+        border-radius: 50%;
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.03);
+        background: rgba(255, 255, 255, 0.1);
+    }
+    .no-touch .nav a:hover i, .no-touch .nav a:active i, .no-touch .nav a:focus i {
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg);
+        background: rgba(174, 78, 1, 0.1);
+    }
+}
+
+/* The "tablet" and "mobile" version
+CSS specific to the 2x3 columns version */
+@media (max-width:800px) {
+
+    /* Creating the 2 column layout using floating elements once again */
+    .nav li {
+        display: block;
+        float: left;
+        width: 33.33333%;
+    }
+    .nav i {
+        padding: 0.2em;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Displaying the icons on the left, and the text on the right side using inlin-block*/
+    .nav li span, .nav li span.icon {
+        display: inline-block;
+        font-size: 1.0em;
+    }
+    .icon + span {
+        position: relative;
+    }
 }
 
 /* FOOTER */
 .footer-wrapper {
     background: rgba(0, 0, 0, 0.44);
-    margin-top: 600px;
+    margin-top: 20px;
     padding: 10px 0;
     height: 2em;
     line-height: 2em;

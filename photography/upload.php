@@ -15,6 +15,7 @@ $result = array(
 
 $title = getSeqID();
 $desc = $_POST['desc'];
+$album = $_POST['album'];
 try {
 	if (!isset($_FILES['upload_file']['error']) || is_array($_FILES['upload_file']['error'])) {
 		throw new RuntimeException('Invalid parameters.');
@@ -30,7 +31,7 @@ try {
 		default:
 			throw new RuntimeException('未知错误.');
 	}
-	if ($_FILES['upload_file']['size'] > 2048000) {
+	if ($_FILES['upload_file']['size'] > 2097152000) {
 		throw new RuntimeException('文件过大.');
 	}
 
@@ -60,8 +61,8 @@ try {
 		
 		$title = $title.".".$ext;
 	
-		$sth = $dbh->prepare("INSERT INTO `photos` (`id`, `title`, `time`, `description`) VALUES (NULL, ?, CURRENT_TIMESTAMP, ?);");
-		$sth->execute(array($title, $desc));
+		$sth = $dbh->prepare("INSERT INTO `photos` (`id`, `title`, `time`, `description`, `album`) VALUES (NULL, ?, CURRENT_TIMESTAMP, ?,?);");
+		$sth->execute(array($title, $desc,$album));
 	}catch(PDOException $e){
 		$result['msg'] = $e->getMessage();
 	}

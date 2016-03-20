@@ -68,28 +68,70 @@ function check($mode){
     <title>Upload Photo</title>
     <link rel="shortcut icon" href="../favicon.ico"> 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/simditor.css" />
-    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <link href="css/photo.css" rel="stylesheet">
 </head>
 
 <body style="background-color: black">
 <!-- Begin Header -->
-<div class="header">
-    <div class="logoimg"><img src="../imgs/logo.png"></div>
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-        <ul class="navbar-nav">
-                <li><a href="../index.php">Home</a></li>
-                <li ><a href="../blog/">Blog</a></li>  
-                <li><a href="index.php">Photos</a></li>   
-                <li><a href="../about/">About</a>         
-        </ul>  
-        </div>
-    </div>
-</div>
-</div>
+<header>
+<nav id="menu" class="nav">                 
+                    <ul>
+                        <li>
+                            <a href="../index.php">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-home"></i>
+                                </span>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../blog/index.php">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-blog"></i>
+                                </span>
+                                <span>Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.php">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-portfolio"></i>
+                                </span>
+                                <span>Photos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../quotes/index.php">
+                                <span class="icon"> 
+                                    <i aria-hidden="true" class="icon-services"></i>
+                                </span>
+                                <span>Quotes</span>
+                            </a>
+                        </li>
+                    
+                        
+                        <li>
+                            <a href="../admin/index.php">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-team"></i>
+                                </span>
+                                <span>Admin</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../contact/index.php">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-contact"></i>
+                                </span>
+                                <span>Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+</nav>
+</header>
+
 
 <div class="container">
 
@@ -100,9 +142,13 @@ if($isLogin)
 	'<div class="col-sm-3">'.
 		'<form id="uploadForm" enctype="multipart/form-data">'.
 			'<div class="form-group">'.
-				'<label for="exampleInputDesc">图片描述</label>'.
-				'<input type="text" class="form-control" id="exampleInputDesc" name="desc" placeholder="...">'.
+				'<label for="exampleInputDesc">Add to Album:</label>'.
+				'<input type="text" class="form-control" id="exampleInputAlbum" name="album" placeholder="travel/daily/design">'.
 			'</div>'.
+            '<div class="form-group">'.
+                '<label for="exampleInputDesc">Description:</label>'.
+                '<input type="text" class="form-control" id="exampleInputDesc" name="desc" placeholder="描述信息">'.
+            '</div>'.
 			'<div class="form-group">'.
 				'<label for="exampleInputFile">上传文件</label>'.
 				'<input type="file" id="exampleInputFile" name="upload_file">'.
@@ -122,12 +168,14 @@ if($isLogin)
 <?php
 if(!$isLogin)
 	echo 
-
-	'	<form action="photoadmin.php" method="post">'.
-	'		<div><input type="text" name="username" class="username" placeholder="Username" autocomplete="off"/></div>'.
-	'		<div><input type="password" name="password" class="password" placeholder="Password" oncontextmenu="return false" onpaste="return false" /></div>'.
-	'		<button id="submit" type="submit">Sign in</button>'.
-	'	</form> ';
+    '<div class="wrapper">'.
+    '<h2>Welcome, Yao</h2>'.
+    '   <form action="photoadmin.php" method="post">'.
+    '       <div><input type="text" name="username" class="username" placeholder="Username" autocomplete="off"/></div>'.
+    '       <div><input type="password" name="password" class="password" placeholder="Password" oncontextmenu="return false" onpaste="return false" /></div>'.
+    '       <button id="login-button" type="submit">Log in</button>'.
+    '   </form> '.
+    '</div>';   
 ?>
 
 
@@ -138,7 +186,7 @@ if(!$isLogin)
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-            copyright©2015 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,瓢瓢"> Contact Me</a> | <a href="photoadmin.php">Upload</a> 
+            copyright©2015-2016 | <a href="mailto:yaopeng0802@gmail.com?subject=Hello,Vicky"> Email Me</a> 
             </div>
         </div>
     </div>
@@ -146,10 +194,9 @@ if(!$isLogin)
 
  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
  <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
- <script src="js/bootstrap.min.js"></script>
- <script src="js/jquery-1.7.2.min.js"></script> 
-<script src="js/jquery.min.js"></script>
-<script src="http://malsup.github.com/jquery.form.js"></script>
-<script src="upload.js"></script>
+ <script src="../js/bootstrap.min.js"></script>
+ <script src="http://malsup.github.com/jquery.form.js"></script>
+ <script src="upload.js"></script>
+ <script src="../js/modernizr.custom.js"></script>
 </body>
 </html>
