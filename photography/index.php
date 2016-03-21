@@ -68,7 +68,7 @@
 </div></div></div>
 
 <div class="container"><div class="row"><div class="col-sm-12">
-<button><a href="photoadmin.php">upload photos</a></button>
+<button class="btn"><a href="photoadmin.php">upload photos</a></button>
 </div></div></div>
 </main>
 <!-- end Wrapper -->

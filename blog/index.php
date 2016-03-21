@@ -55,8 +55,8 @@ define( 'DB_PORT', 3305 );
     </div>
 
     <div class="container" style="text-align: center">
-    <button id="pre" onclick="readPre()">pre</button>
-    <button id="next" onclick="readNext()">next</button>
+    <button id="pre" class="btn" style="float: left;" onclick="readPre()">pre</button>
+    <button id="next" class="btn" style="float: right;" onclick="readNext()">nxt</button>
     </div>
 </main>
 
@@ -66,7 +66,7 @@ define( 'DB_PORT', 3305 );
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-            copyright©2014-2025 | Vicky.P.Y | <a href="mailto:vickypy0802@gmail.com?subject=Hello,Vicky"> Email Me</a> 
+            copyrightÂ©2014-2025 | Vicky.P.Y | <a href="mailto:vickypy0802@gmail.com?subject=Hello,Vicky"> Email Me</a> 
             </div>
         </div>
     </div>
@@ -97,7 +97,7 @@ define( 'DB_PORT', 3305 );
                     '<div class="entry-content clearfix" style="text-align: left">'+
                     '<p>'+response.contentList[i].substring(0,401)+"..."+'</p>'+
                     '</div>'+
-                    '<div class="read-more"><a href="single.php?id='+response.idList[i]+'">Continue reading <span>�&#65533;</span></a></div>'+
+                    '<div class="read-more"><a href="single.php?id='+response.idList[i]+'">>>d(‧-‧)Continue reading<<</a></div>'+
                     '</article>'+
                     '</a></div>';
                 $("#blogList").append(html);
@@ -118,7 +118,7 @@ define( 'DB_PORT', 3305 );
 
         }
         else{
-            alert("获取blog失败, " + response.msg)
+            alert("èŽ·å–blogå¤±è´¥, " + response.msg)
         }
     })
     });
@@ -146,7 +146,7 @@ define( 'DB_PORT', 3305 );
                     '<div class="entry-content clearfix" style="text-align: left">'+
                     '<p>'+response.contentList[i].substring(0,400)+"..."+'</p>'+
                      '</div>'+
-                    '<div class="read-more"><a href="single.php?id='+response.idList[i]+'">Continue reading <span>�&#65533;</span></a></div>'+
+                    '<div class="read-more"><a href="single.php?id='+response.idList[i]+'">Continue reading <span>â†&#65533;</span></a></div>'+
                    
                     '</article>'+
                     '</div>';
@@ -161,7 +161,7 @@ define( 'DB_PORT', 3305 );
             $('#blogList').waterfall();
         }
         else{
-            alert("获取blog失败, " + response.msg)
+            alert("èŽ·å–blogå¤±è´¥, " + response.msg)
         }
     })
     }
@@ -183,7 +183,7 @@ define( 'DB_PORT', 3305 );
                     '<div class="entry-content clearfix" style="text-align: left">'+
                     '<p>'+response.contentList[i].substring(0,400)+"..."+'</p>'+
                      '</div>'+
-                    '<div class="read-more"><a href="single.php?id='+response.idList[i]+'">Continue reading <span>�&#65533;</span></a></div>'+
+                    '<div class="read-more"><a href="single.php?id='+response.idList[i]+'">Continue reading <span>â†&#65533;</span></a></div>'+
                     '</article>'+
                     '</div>';
                 $("#blogList").append(html);
@@ -204,7 +204,7 @@ define( 'DB_PORT', 3305 );
   
         }
         else{
-            alert("获取blog失败, " + response.msg)
+            alert("èŽ·å–blogå¤±è´¥, " + response.msg)
         }
 
 

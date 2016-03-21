@@ -33,7 +33,7 @@
     background: transparent;
     font-size: 1.0em;
     line-height: 1.2em;
-word-break:break-all;
+    word-break: break-all;
 }
 
 /* Read More Button  */
@@ -57,6 +57,22 @@ word-break:break-all;
 .read-more a:hover {
     color: #aaa;
     text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+}
+.btn {
+    -webkit-border-radius: 13;
+    -moz-border-radius: 13;
+    border-radius: 13px;
+    font-family: Georgia;
+    color: #563624;
+    font-size: 20px;
+    background: #E0EFF1;
+    padding: 10px 50px 10px 50px;
+    text-decoration: none;
+    margin: 20px;
+}
+.btn:hover {
+    border: #FFFFF 1px solid;
+    text-decoration: none;
 }
 
 /* Contact Form */
