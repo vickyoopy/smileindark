@@ -42,7 +42,6 @@
 <!-- Begin Wrapper -->
     <section id="section1" class="cd-section">
         <h1>- SMILE IN DARK -</h1><br>
-        <p id="s1">Open the prologue of Darkness</p>
         <a href="#section2" class="cd-scroll-down cd-img-replace" onclick="s2load()">scroll down</a>
     </section>
 
@@ -50,23 +49,6 @@
         <p id="s2">If you don't fail, you are not even trying.</p>
     </section>
 
-    <section id="section3" class="cd-section">
-        <p id="s3">We ascribe beauty to that which is simple, which has no superfluous parts, which exactly answers its end, which stands related to all things, which is the mean of many extremes. - Ralph Waldo Emerson</p>
-    </section>
-
-    <section id="section4" class="cd-section">
-        <p id="s4">There is some good in this world worth fighting for!</p>
-    </section>
-
-    <section id="section5" class="cd-section">
-        <p id="s5">l'enfer, c'est les autres.<br>
-        </p>
-    </section>
-
-    <section id="section6" class="cd-section">
-        <p id="s6">勝手にやって来て,<br>
-        勝手に去って行く</p>
-    </section>
 
     <!-- Footer -->
     <div class="footer-wrapper">

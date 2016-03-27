@@ -25,10 +25,30 @@ Main
 .cd-section:nth-of-type(even) {
 	background-color: #FFFFFF;
 }
-.cd-section h1, .cd-section p {
+.cd-section h1 {
 	position: absolute;
 	left: 50%;
-	top: 50%;
+	top: 10%;
+	bottom: auto;
+	right: auto;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-o-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	width: 90%;
+	max-width: 768px;
+	text-align: center;
+	color: #dedede;
+	font-family: "Times New Roman", Georgia, Serif, sans-serif;
+	text-transform: uppercase;
+	font-size: 2em;
+	line-height: 2em;
+}
+.cd-section p {
+	position: absolute;
+	left: 50%;
+	top: 10%;
 	bottom: auto;
 	right: auto;
 	-webkit-transform: translateX(-50%) translateY(-50%);
@@ -43,22 +63,10 @@ Main
 	font-size: 1.4em;
 	font-family: "Times New Roman", Georgia, Serif, sans-serif;
 	line-height: 1.5em;
-}
-.cd-section h1 {
-	text-transform: uppercase;
-	top: 10%;
-	font-size: 2em;
-	line-height: 2em;
-}
-.cd-section p {
 	-webkit-transform: translate3d(-50%, -50%, 0);
 	transform: translate3d(-50%, -50%, 0);
 	padding: 10px 40px;
-	border: 10px double #f9f1e9;
-}
-#s1 {
-	border: none;
-	padding: 0;
+	border: 10px solid #f9f1e9;
 }
 .cd-section:nth-of-type(even) p {
 	color: #563624;
