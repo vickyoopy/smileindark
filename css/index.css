@@ -70,6 +70,9 @@ body {
 }
 
 /*navbar-nav */
+nav {
+    background-image: url('../imgs/navbg.png');
+}
 .navbar-nav li a {
     text-decoration: none;
 }
@@ -102,7 +105,6 @@ span.nav-label {
         width: 100px;
         height: 100px;
         position: relative;
-        bottom: -2em;
         background-repeat: no-repeat;
         background-size: 100% 100%;
     }

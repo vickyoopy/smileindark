@@ -6,8 +6,6 @@ body, html {
 Main 
 -------------------------------- */
 .cd-img-replace {
-
-	/* replace text with a background-image */
 	display: inline-block;
 	overflow: hidden;
 	text-indent: 100%;
@@ -28,7 +26,7 @@ Main
 .cd-section h1 {
 	position: absolute;
 	left: 50%;
-	top: 10%;
+	top: 5%;
 	bottom: auto;
 	right: auto;
 	-webkit-transform: translateX(-50%) translateY(-50%);
@@ -36,8 +34,6 @@ Main
 	-ms-transform: translateX(-50%) translateY(-50%);
 	-o-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
-	width: 90%;
-	max-width: 768px;
 	text-align: center;
 	color: #dedede;
 	font-family: "Times New Roman", Georgia, Serif, sans-serif;

@@ -30,7 +30,7 @@
       <ul class="nav navbar-nav row">
             <li><a href="blog/index.php"><img src="imgs/blog.png"><span class="nav-label">Blog</span></a></li>
             <li><a href="photography/index.php"><img src="imgs/photo.png"><span class="nav-label">Photos</span></a></li>
-            <li><a href="#"><img src="imgs/home.png"><span class="nav-label">Home</span></a></li>
+            <li><a href="#"><img src="imgs/home.png" style="bottom: -2em"><span class="nav-label">Home</span></a></li>
             <li><a href="admin/index.php"><img src="imgs/admin.png"> <span class="nav-label">Admin</span> </a></li>
             <li><a href="contact/index.php"><img src="imgs/contact.png"><span class="nav-label">Contact</span></a></li>
       </ul>
