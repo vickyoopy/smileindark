@@ -73,6 +73,7 @@ function check($mode){
     <link rel="stylesheet" type="text/css" href="css/simditor.css" />
     <link rel="stylesheet" href="../css/index.css" type="text/css">
     <link rel="stylesheet" href="css/admin.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
 </head>
   
 <body>
@@ -91,11 +92,11 @@ function check($mode){
     <!-- large screen display-->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav row">
-            <li><a href="../blog/index.php"><img src="../imgs/blog.png"><span class="nav-label">Blog</span></a></li>
-            <li><a href="../photography/index.php"><img src="../imgs/photo.png"><span class="nav-label">Photos</span></a></li>
-            <li><a href="../index.php"><img src="../imgs/home.png"><span class="nav-label">Home</span></a></li>
-            <li><a href="index.php"><img src="../imgs/admin.png"> <span class="nav-label">Admin</span> </a></li>
-            <li><a href="../contact/index.php"><img src="../imgs/contact.png"><span class="nav-label">Contact</span></a></li>
+            <li class="col-sm-2"><a href="../blog/index.php"><img src="../imgs/blog.png"><span class="nav-label">Blog</span></a></li>
+            <li class="col-sm-2"><a href="../photography/index.php"><img src="../imgs/photo.png"><span class="nav-label">Photos</span></a></li>
+            <li class="col-sm-2"><a href="../index.php"><img src="../imgs/home.png" style="bottom: -3em"><span class="nav-label">Home</span></a></li>
+            <li class="col-sm-2"><a href="index.php"><img src="../imgs/admin.png"> <span class="nav-label">Admin</span> </a></li>
+            <li class="col-sm-2"><a href="../contact/index.php"><img src="../imgs/contact.png"><span class="nav-label">Contact</span></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -104,16 +105,29 @@ function check($mode){
 <?php
 if(!$isLogin)
 	echo 
-	'<div class="wrapper">'.
-	'<h2>Welcome, Yao</h2>'.
-	'	<form action="index.php" method="post">'.
-	'		<div><input type="text" name="username" class="username" placeholder="Username" autocomplete="off"/></div>'.
-	'		<div><input type="password" name="password" class="password" placeholder="Password" oncontextmenu="return false" onpaste="return false" /></div>'.
-	'		<button id="login-button" type="submit">Log in</button>'.
-	'	</form> '.
+	'<div id="wrapper">'.
+ 	'<div id="login" class="animate form">'.
+                            '<form  action="#" autocomplete="on"> '.
+                                '<h1>Welcome, Yao</h1> '.
+                                '<p> '.
+                                    '<label for="username" class="uname" data-icon="u" > Your username </label>'.
+                                    '<input id="username" name="username" required="required" type="text" placeholder="Vicky"/>'.
+                                '</p>'.
+                                '<p> '.
+                                    '<label for="password" class="youpasswd" data-icon="p"> Your password </label>'.
+                                   ' <input id="password" name="password" required="required" type="password" placeholder="Password" /> '.
+                                '</p>'.
+                                
+                                '<p class="login button">'.
+                                    '<input type="submit" value="Login" />'. 
+								'</p>'.
+                               
+                            '</form>'.
+                        '</div>'.
 	'</div>';	
 ?>
-	
+
+
 <!-- Admin -->
 <?php
 if($isLogin)

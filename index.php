@@ -7,7 +7,6 @@
     <title>Yao Peng</title>
     <link rel="shortcut icon" href="../favicon.ico"> 
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/jquery-letterfx.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css" type="text/css">
     <link rel="stylesheet" href="css/home.css" type="text/css">
 </head>
@@ -41,27 +40,21 @@
 
 <!-- Begin Wrapper -->
     <section class="cd-section">   
-    <div class="row">
-        <div class="col-sm-12 col-xs-12 col-md-2" > <img src="imgs/elec.png" style="width:160%;float: right;margin-right: -200px;z-index:-1" > video information </div>
-        <div class="col-sm-12 col-xs-12 col-md-8" style="z-index:999;">
-            <div class="row"><img src="imgs/videobg.png" style="height:100px;margin-bottom: -10px;" ></div>
-            <div class="row"><embed src="http://static.hdslb.com/play.swf?aid=2825096" width="960" height="540"></embed></div>
+    <div class="row">        
+        <div class="col-sm-12 col-xs-12 " style="z-index:999;">
+            <div class="row"><img src="imgs/videobg.png" style="height:100px;margin-bottom: -2%;" ></div>
+            <div class="row"><embed src="http://static.hdslb.com/play.swf?aid=2825096"></embed></div>
         </div>
-        <div class="col-sm-12 col-xs-12 col-md-2"> <img src="imgs/audacity.png" style="float:left;margin:400px -180px;z-index: -1;">click to switch video</div> 
+        
     </div>
     </section>
-
-    <section class="cd-section">
-        
-    </section>
-
 
     <!-- Footer -->
     <div class="footer-wrapper">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-            copyright婕�2014-2025 | Vicky.P.Y | <a href="mailto:vickypy0802@gmail.com?subject=Hello,Vicky"> Email Me</a> 
+            copyright©2014-2025 | Vicky.P.Y | <a href="mailto:vickypy0802@gmail.com?subject=Hello,Vicky"> Email Me</a> 
             </div>
         </div>
     </div>
@@ -71,12 +64,6 @@
     <script src="js/jquery-1.12.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/jquery-letterfx.min.js"></script>
-    <script type="text/javascript">
-        s2load=function(){
-        $("#s2").letterfx({"fx":"swirl"});
-        }
-    </script>
-
+    
 </body>
 </html>                

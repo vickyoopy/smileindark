@@ -40,3 +40,17 @@ Main
 	padding: 10px 40px;
 	border: 10px solid #f9f1e9;
 }
+@media (min-width:800px) {
+	embed {
+		width: 960px;
+		height: 540px;
+		margin: 0 auto;
+	}
+}
+@media (max-width:800px) {
+	embed {
+		width: 90%;
+		height: 500px;
+		margin: 0 auto;
+	}
+}

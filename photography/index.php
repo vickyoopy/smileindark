@@ -29,11 +29,11 @@
     <!-- large screen display-->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav row">
-            <li><a href="../blog/index.php"><img src="../imgs/blog.png"><span class="nav-label">Blog</span></a></li>
-            <li><a href="index.php"><img src="../imgs/photo.png"><span class="nav-label">Photos</span></a></li>
-            <li><a href="../index.php"><img src="../imgs/home.png"><span class="nav-label">Home</span></a></li>
-            <li><a href="../admin/index.php"><img src="../imgs/admin.png"> <span class="nav-label">Admin</span> </a></li>
-            <li><a href="../contact/index.php"><img src="../imgs/contact.png"><span class="nav-label">Contact</span></a></li>
+            <li class="col-sm-2"><a href="../blog/index.php"><img src="../imgs/blog.png"><span class="nav-label">Blog</span></a></li>
+            <li class="col-sm-2"><a href="index.php"><img src="../imgs/photo.png"><span class="nav-label">Photos</span></a></li>
+            <li class="col-sm-2"><a href="../index.php"><img src="../imgs/home.png" style="bottom: -3em"><span class="nav-label">Home</span></a></li>
+            <li class="col-sm-2"><a href="../admin/index.php"><img src="../imgs/admin.png"> <span class="nav-label">Admin</span> </a></li>
+            <li class="col-sm-2"><a href="../contact/index.php"><img src="../imgs/contact.png"><span class="nav-label">Contact</span></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -68,7 +68,7 @@
 </div></div></div>
 
 <div class="container"><div class="row"><div class="col-sm-12">
-<button class="btn"><a href="photoadmin.php">upload photos</a></button>
+<button class="btn"><a href="photoadmin.php" style="color: #563624;">upload photos</a></button>
 </div></div></div>
 </main>
 <!-- end Wrapper -->
